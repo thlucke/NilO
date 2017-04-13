@@ -1,0 +1,77 @@
+\ProvidesPackage{homework}
+
+% -------------------------------- %
+% ------- P A C K A G E S -------- %
+% -------------------------------- %
+
+% language of writing
+\usepackage[ngerman]{babel}
+
+% fontrelated
+\usepackage[T1]{fontenc}
+
+% layout related
+\usepackage{geometry}
+\usepackage{tabularx, graphicx}
+\usepackage{setspace}
+
+% math related
+\usepackage{amsmath, amssymb, amsthm, amsopn, amsfonts}
+
+% useful stuff
+\usepackage{lipsum}
+\usepackage{color}
+
+% -------------------------------- %
+% - G L O B A L  S E T T I N G S - %
+% -------------------------------- %
+
+\setlength{\parindent}{0pt}
+
+\onehalfspacing
+
+% -------------------------------- %
+% ------- C O M M A N D S -------- %
+% -------------------------------- %
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% -------------------------------- %
+% --- E N V I R O N M E N T S ---- %
+% -------------------------------- %
+
+% titlepage
+\newcommand{\ourtitle}{\begingroup
+	\large
+	\begin{center}
+	\begin{tabular}{lc}
+		Claudia Wohlgemuth & \emph{363089} \\
+		Thorsten Lucke & \emph{366515} \\
+		Felix Thoma & \emph{} \\
+	\end{tabular}
+	\end{center}
+	\begin{center}
+	\vspace{0.5cm}
+	Tutor: Mathieu Rosi\`ere, Di 8-10 Uhr \\
+	\end{center}
+	\begin{center}
+	\vspace{0.2cm}
+	\today
+	\end{center}
+	\endgroup
+}
+
+% assignment format
+\newcommand{\assignment}[1]{
+	\newpage
+	\newgeometry{bottom=2cm,left=2.5cm,right=5cm}
+	\begin{center}
+		\section*{Aufgabe #1}
+		\rule{\textwidth}{1pt}
+	\end{center}
+}
+
+\endinput
