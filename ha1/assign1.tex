@@ -1,3 +1,84 @@
 \assignment{1.1}
 
-\lipsum[1-4]
+\begin{itemize}
+\item[(i)]
+Es sei $A\colon\Rn\to\Rn$ eine lineare Abbildung. Wir werden zeigen, dass
+$A$ genau dann positiv definit ist, wenn $A$ stark positiv ist.
+
+\begin{proof}
+Sei $A$ zun"achst stark positiv. Dann existiert ein $\alpha>0$, sodass die
+Absch"atzung
+\begin{equation}\label{eq:starkPositiv}
+\langle{Ax,x}\rangle \ge \alpha\lVert x\rVert^2
+\end{equation}
+f"ur alle $x\in\Rn$ erf"ullt ist. Der positiven Definitheit von Normen wegen,
+folgt f"ur alle $x\in\Rn \setminus\{0\}$ unmittelbar
+\[
+\langle{Ax,x}\rangle \ge \alpha\lVert x\rVert^2 > 0.
+\]
+Die Abbildung $A$ ist also positiv definit.\\
+
+Sei $A$ nun positiv definit und $x\in\Rn$ beliebig gew"ahlt. Ist $x=0$,
+so gilt \eqref{eq:starkPositiv}
+f"ur alle $\alpha>0$. Sei daher $x$ von Null verschieden. Dann gilt
+\eqref{eq:starkPositiv} genau dann, wenn
+\[
+\frac{\langle Ax,x \rangle}{\lVert x \rVert^2} \ge \alpha
+\]
+beziehungsweise
+\[
+\langle Ay,y \rangle \ge \alpha
+\]
+f"ur alle $y\in\Rn$ mit $\lVert y \rVert = 1$ erf"ullt ist. Da lineare
+Abbildungen -- auf endlichen Vekorr"aumen operierend -- beschr"ankt und
+stetig sind, ist auch die Abbildung
+\[
+f\colon\mathbb{S}^1\to\R \text{, } y\mapsto\langle Ay,y\rangle
+\]
+stetig. Da die Einheitssph"are $\mathbb{S}^1$ kompakt ist, folgt aus dem
+Satz von Weierstra"s die Existenz eines Minimums $\alpha\in\R$ mit
+$f(y)\ge \alpha$ f"ur alle $y\in\mathbb{S}^1$. Da $A$ positiv definit ist,
+muss zudem $\alpha>0$ gelten. Es folgt daher insgesamt
+\[
+\langle{Ax,x}\rangle \ge \alpha\lVert x\rVert^2
+\]
+f"ur alle $x\in\Rn$ und damit die starke Positivit"at von $A$.
+\end{proof}
+
+\item[(ii)]
+Wir zeigen nun, dass (i) im Allgemeinen falsch ist. Dazu betrachten wir die
+Abbildung
+\[
+A\colon \ell_2\to \ell_2 \text{, } (x_n)_{n\in\N} \mapsto
+\left(\frac{1}{n}x_n\right)_{n\in\N}.
+\]
+Da f"ur alle $n\in\N$ die Absch"atzung $(x_n / n)^2 \le (x_n)^2$ gilt,
+folgt wegen
+\[
+\sum_{n=1}^\infty \left(\frac{1}{n} x_n\right)^2 \le
+\sum_{n=1}^\infty (x_n)^2
+\]
+die Wohldefiniertheit und Beschr"anktheit der Abbildung $A$ aus dem Majorantenkriterium f"ur Reihen.\\
+
+Desweiteren folgt aus
+\[
+0 \le \langle A\seq{x}, \seq{x} \rangle = \sum_{n=1}^\infty \frac{1}{n}x_n^2
+\]
+die positive Definitheit. \\
+
+Seien nun $\seq{x}, \seq{y}\in\ell_2$ zwei Folgen und $\lambda\in\R$ beliebig gew"ahlt.
+Dann ist $A$ wegen
+\begin{align*}
+A(\lambda\seq{x}+\seq{y}) &= A(\seq{\lambda x} + \seq{y})\\
+&= A((\lambda x_n + y_n)_{n\in\N})\\
+&= \left(\frac{1}{n} (\lambda x_n + y_n) \right)_{n\in\N}\\
+&= \left( \lambda\frac{x_n}{n} + \frac{y_n}{n}\right)_{n\in\N}\\
+&= \lambda\left(\frac{x_n}{n}\right)_{n\in\N} + \left(\frac{y_n}{n}\right)_{n\in\N}\\
+&= \lambda A\seq{x} + A\seq{y}
+\end{align*}
+linear.\\
+
+Sei nun $\alpha > 0$ beliebig gew"ahlt. \textcolor{red}{Bin gerade zu bl"od
+die Folge richig auszurechnen :< .}
+
+\end{itemize}
