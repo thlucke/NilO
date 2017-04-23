@@ -78,7 +78,11 @@ A(\lambda\seq{x}+\seq{y}) &= A(\seq{\lambda x} + \seq{y})\\
 \end{align*}
 linear.\\
 
-Sei nun $\alpha > 0$ beliebig gew"ahlt. \textcolor{red}{Bin gerade zu bl"od
-die Folge richig auszurechnen :< .}
+Sei nun $\alpha > 0$ beliebig gew"ahlt. Dann gibt es ein $k\in\N$ mit $\frac{1}{k}<\alpha$.
+F"ur den $k$-ten Einheitsbasisvektor $e_k=(\delta_{k,n})_{n\in\N}$ des $\ell_2$ gilt dann
+\begin{displaymath}
+ \langle Ae_k,e_k\rangle=\sum_{n=1}^\infty \frac{1}{n}\delta_{k,n}^2=\frac{1}{k}<\alpha.
+\end{displaymath}
+Somit kann ein derartiges $\alpha$ nicht existieren, das bedeutet, $A$ ist nicht stark positiv.
 
 \end{itemize}

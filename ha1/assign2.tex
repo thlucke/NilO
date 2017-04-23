@@ -2,17 +2,70 @@
 
 Es sei $f\colon\Rn\to\Rn$ eine Funktion.
 
-\begin{itemize}
-\item[(i)]
-Sei $\epi(f)$ konvex. Angenommen, $f$ ist keine konvexe Funktion. Dann
-gibt es Vektoren $x, y\in\Rn$ mit $x<y$, sowie ein $t \in [0,1]$ mit der Eigenschaft
-\[
-f(x+t (y-x)) > f(x) + t(f(y)-f(x)).
-\]
-Dann gilt aber $(x+t(y-x), f(x)+t(f(y)-f(x))) \notin \epi(f)$
-im Widerspruch zur Konvexit"at des Epigraphen.\\
+% \begin{itemize}
+% \item[(i)]
+% Sei $\epi(f)$ konvex. Angenommen, $f$ ist keine konvexe Funktion. Dann
+% gibt es Vektoren $x, y\in\Rn$ mit $x<y$, sowie ein $t \in [0,1]$ mit der Eigenschaft
+% \[
+% f(x+t (y-x)) > f(x) + t(f(y)-f(x)).
+% \]
+% Dann gilt aber $(x+t(y-x), f(x)+t(f(y)-f(x))) \notin \epi(f)$
+% im Widerspruch zur Konvexit"at des Epigraphen.\\
+% 
+% Sei nun $f$ eine konvexe Funktion. Betrachte f"ur $(x,\alpha), (y,\beta) \in\epi(f)$
+% mit $x<y$ die Verbindungsstrecke $\gamma\colon[0,1] \to \epi(f)$,
+% $t\mapsto (x,\alpha) + t((y,\beta)-(x,\alpha))$
+% \end{itemize}
 
-Sei nun $f$ eine konvexe Funktion. Betrachte f"ur $(x,\alpha), (y,\beta) \in\epi(f)$
-mit $x<y$ die Verbindungsstrecke $\gamma\colon[0,1] \to \epi(f)$,
-$t\mapsto (x,\alpha) + t((y,\beta)-(x,\alpha))$
+\begin{itemize}
+ \item[(i)] Sei $f$ zus"atzlich konvex und seien $(x,\alpha),(y,\beta)\in\epi(f)$ und $\lambda\in[0,1]$.
+ Dann folgt aus der Konvexit"at von $f$ und der Definition des Epigraphen
+ \begin{displaymath}
+  f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)\leq \lambda\alpha+(1-\lambda)\beta,
+ \end{displaymath}
+ das hei"st, wegen $(\lambda x+(1-\lambda)y),\lambda\alpha+(1-\lambda)\beta)=\lambda(x,\alpha)+(1-\lambda)(y,\beta)\in\epi(f)$
+ ist $\epi(f)$ konvex.\\
+ Ist andererseits $\epi(f)$ konvex und seien $x,y\in\Rn$ und $\lambda\in[0,1]$, so erhalten wir mit
+ $(x,f(x)),(y,f(y))\in\epi(f)$ unmittelbar $(\lambda x+(1-\lambda)y),\lambda f(x)+(1-\lambda)f(y))\in \epi(f)$ und somit die Behauptung
+ \begin{displaymath}
+  f(\lambda x+(1-\lambda)y)\leq\lambda\alpha+(1-\lambda)\beta.
+ \end{displaymath}
+ \item[(ii)] Diese Aussage ist leider falsch, wie sich leicht an 
+ \begin{displaymath}
+  f\colon\R\to\R, x\mapsto \begin{cases}
+                       0, &x\in\R\backslash{0},\\
+                       -1, &x=0,
+                      \end{cases}
+ \end{displaymath}
+ einsehen l"asst. Offensichtlich ist $f$ nicht stetig. Dennoch ist 
+ \begin{displaymath}
+  \epi(f)=\R\times[0,\infty)\cup\{0\}\times[-1,\infty)
+ \end{displaymath}
+ abgeschlossen.
+ \\ \\
+ Wir zeigen stattdessen, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.\\
+ Sei dazu zunächst $f$ unterhalbstetig, das hei"st, für alle $x\in\Rn$ gelte 
+ \begin{displaymath}
+  f(x)\leq\liminf_{t\to x}f(t).
+ \end{displaymath}
+ Sei ferner $(x_n,\alpha_n)_{n\in\N}\subset\epi(f)\subset\R^{n+1}$ eine beliebige in $\R^{n+1}$ konvergente Folge.
+ Wir setzen $x\coloneqq \lim_{n\to\infty} x_n\in\Rn$ und $\alpha\coloneqq\lim_{n\to\infty}\alpha_n$. Dann gilt
+ wegen der Unterhalbstetigkeit von $f$
+ \begin{displaymath}
+  \alpha= \lim_{n\to\infty}\alpha_n \geq \liminf_{n\to\infty} f(x_n)\geq f(x),
+ \end{displaymath}
+ also $(x,\alpha)\in\epi(f)$. Somit ist $\epi(f)$ abgeschlossen.\\
+ Sei andererseits $\epi(f)$ abgeschlossen und $(x_n)_{n\in\N}\subset \Rn$ eine beliebige gegen $\Rn$ konvergente Folge. Dann ist
+ wegen $(x_n,f(x_n))\in\epi(f)$ für alle $n\in\N$ und der Abgeschlossenheit von $\epi(f) $ auch
+ \begin{displaymath}
+  (\lim_{n\to\infty} x_n,\liminf_{n\to\infty}f(x_n))=(x,\liminf_{n\to\infty}f(x_n))\in\epi(f)
+ \end{displaymath}
+ und somit gilt 
+ \begin{displaymath}
+  f(x)\leq \liminf_{n\to\infty}f(x_n).
+ \end{displaymath}
+ \item[(iii)]
+ Aus der Analysis-Übung vom 9. Dezember 2016 wissen wir, dass koerzive und unterhalbstetige Funktionen ein
+ Minimum besitzen.
 \end{itemize}
+
