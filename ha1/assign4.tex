@@ -1,0 +1,24 @@
+\assignment{1.4}
+
+\begin{compactenum}[(i)]
+ \item Es gilt nach Vorlesung
+ \begin{displaymath}
+  x^THx=\sum_{i=1}^m(x_1\xi_i+x_2)^2.
+ \end{displaymath}
+ Sei nun $x\in\R^2$ beliebig. Wegen $(x_1\xi_i+x_2)^2\geq0$ ist $x^THx\geq0$ und weil $\xi\mapsto x_1\xi+x_2$ nur eine Nullstelle besitzt, die $\xi_i$ aber
+ paarweise verschieden sind, gibt es ein $\xi_i$ mit $(x_1\xi_i+x_2)^2>0$. Somit ist $x^THx>0$ für jedes $x\in\R^2$ und $H$ also positiv definit.
+ Nun ist $f$ zweimal stetig differenzierar und damit genau dann konvex, wenn $f''=H$ positiv definit ist. Hiermit folgt die Behauptung.
+ \\
+ \item Mit 1.1. wissen wir, dass $H$ sogar stark positiv ist. Wir haben also mit Cauchy-Schwarz und der starken Positivität
+ \begin{align*}
+  &f(x)&=&\frac{1}{2}\langle Hx,x\rangle+\langle b, x\rangle+c\\
+  &&\geq&\frac{1}{2}\langle Hx,x\rangle+\Vert b\Vert_2\Vert x\Vert_2+c\\
+  &&\geq&\frac{1}{2}\alpha\Vert x\Vert_2^2+\Vert b\Vert_2\Vert x\Vert_2+c \eqqcolon g(\Vert x\Vert_2).
+ \end{align*}
+ Für quadratische, reelle Funktionen gilt bekanntlich
+ \begin{displaymath}
+  \infty=\lim_{\Vert x\Vert_2\to\infty}g(\Vert x\Vert_2)\leq \lim_{\Vert x\Vert_2\to\infty} f(x).
+ \end{displaymath}
+ Somit ist $f$ koerzitiv und zusammen mit der Stetigkeit folgt die Existenz eines Minimierers. Aufgrund der Konvexität von $f$ ist dieser eindeutig.
+
+\end{compactenum}
