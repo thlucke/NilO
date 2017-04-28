@@ -11,40 +11,50 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
 % \]
 % Dann gilt aber $(x+t(y-x), f(x)+t(f(y)-f(x))) \notin \epi(f)$
 % im Widerspruch zur Konvexit"at des Epigraphen.\\
-% 
+%
 % Sei nun $f$ eine konvexe Funktion. Betrachte f"ur $(x,\alpha), (y,\beta) \in\epi(f)$
 % mit $x<y$ die Verbindungsstrecke $\gamma\colon[0,1] \to \epi(f)$,
 % $t\mapsto (x,\alpha) + t((y,\beta)-(x,\alpha))$
 % \end{itemize}
 
 \begin{itemize}
- \item[(i)] Sei $f$ zus"atzlich konvex und seien $(x,\alpha),(y,\beta)\in\epi(f)$ und $\lambda\in[0,1]$.
+ \item[(i)] Sei $f$ zus"atzlich konvex und seien $(x,\alpha),(y,\beta)\in\epi(f)$ sowie $\lambda\in[0,1]$ beliebig gew"ahlt.
  Dann folgt aus der Konvexit"at von $f$ und der Definition des Epigraphen
  \begin{displaymath}
-  f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)\leq \lambda\alpha+(1-\lambda)\beta,
+  f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)\leq \lambda\alpha+(1-\lambda)\beta.
  \end{displaymath}
- das hei"st, wegen $(\lambda x+(1-\lambda)y),\lambda\alpha+(1-\lambda)\beta)=\lambda(x,\alpha)+(1-\lambda)(y,\beta)\in\epi(f)$
- ist $\epi(f)$ konvex.\\
- Ist andererseits $\epi(f)$ konvex und seien $x,y\in\Rn$ und $\lambda\in[0,1]$, so erhalten wir mit
- $(x,f(x)),(y,f(y))\in\epi(f)$ unmittelbar $(\lambda x+(1-\lambda)y),\lambda f(x)+(1-\lambda)f(y))\in \epi(f)$ und somit die Behauptung
+ Daher ist der Epigraph von $f$ wegen
+ \[
+\lambda(x,\alpha)+(1-\lambda)(y,\beta)=
+(\lambda x+(1-\lambda)y,\lambda\alpha+(1-\lambda)\beta)\in\epi(f)
+ \]
+ konvex.
+ Ist hingegen $\epi(f)$ konvex und sind $x,y\in\Rn$ sowie $\lambda\in[0,1]$ vorgegeben, erhalten wir mit
+ $(x,f(x)),(y,f(y))\in\epi(f)$ auch
+\[
+ (\lambda x+(1-\lambda)y,\lambda f(x)+(1-\lambda)f(y))\in \epi(f).
+ \]
+ Die Behauptung
  \begin{displaymath}
-  f(\lambda x+(1-\lambda)y)\leq\lambda\alpha+(1-\lambda)\beta.
+  f(\lambda x+(1-\lambda)y)\leq\lambda\alpha+(1-\lambda)\beta
  \end{displaymath}
- \item[(ii)] Diese Aussage ist leider falsch, wie sich leicht an 
+ folgt sofort.
+
+ \item[(ii)] Diese Aussage ist im Allgemeinen falsch, wie sich leicht an
  \begin{displaymath}
   f\colon\R\to\R, x\mapsto \begin{cases}
-                       0, &x\in\R\backslash{0},\\
+                       0, &x\in\R\setminus\{0\},\\
                        -1, &x=0,
                       \end{cases}
  \end{displaymath}
- einsehen l"asst. Offensichtlich ist $f$ nicht stetig. Dennoch ist 
+ einsehen l"asst. Offensichtlich ist $f$ nicht stetig. Dennoch ist
  \begin{displaymath}
   \epi(f)=\R\times[0,\infty)\cup\{0\}\times[-1,\infty)
  \end{displaymath}
  abgeschlossen.
  \\ \\
  Wir zeigen stattdessen, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.\\
- Sei dazu zunächst $f$ unterhalbstetig, das hei"st, für alle $x\in\Rn$ gelte 
+ Sei dazu zunächst $f$ unterhalbstetig, das hei"st, für alle $x\in\Rn$ gelte
  \begin{displaymath}
   f(x)\leq\liminf_{t\to x}f(t).
  \end{displaymath}
@@ -60,7 +70,7 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  \begin{displaymath}
   (\lim_{n\to\infty} x_n,\liminf_{n\to\infty}f(x_n))=(x,\liminf_{n\to\infty}f(x_n))\in\epi(f)
  \end{displaymath}
- und somit gilt 
+ und somit gilt
  \begin{displaymath}
   f(x)\leq \liminf_{n\to\infty}f(x_n).
  \end{displaymath}
@@ -68,4 +78,3 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  Aus der Analysis-Übung vom 9. Dezember 2016 wissen wir, dass koerzive und unterhalbstetige Funktionen ein
  Minimum besitzen.
 \end{itemize}
-

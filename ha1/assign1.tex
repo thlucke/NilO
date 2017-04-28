@@ -62,7 +62,7 @@ die Wohldefiniertheit und Beschr"anktheit der Abbildung $A$ aus dem Majorantenkr
 
 Desweiteren folgt aus
 \[
-0 \le \langle A\seq{x}, \seq{x} \rangle = \sum_{n=1}^\infty \frac{1}{n}x_n^2
+\langle A\seq{x}, \seq{x} \rangle = \sum_{n=1}^\infty \frac{1}{n}x_n^2 \ge 0
 \]
 die positive Definitheit. \\
 
@@ -83,6 +83,10 @@ F"ur den $k$-ten Einheitsbasisvektor $e_k=(\delta_{k,n})_{n\in\N}$ des $\ell_2$ 
 \begin{displaymath}
  \langle Ae_k,e_k\rangle=\sum_{n=1}^\infty \frac{1}{n}\delta_{k,n}^2=\frac{1}{k}<\alpha.
 \end{displaymath}
-Somit kann ein derartiges $\alpha$ nicht existieren, das bedeutet, $A$ ist nicht stark positiv.
+Demnach kann kein $\alpha > 0$ existieren, welches der Forderung
+\[
+\langle A(x_n)_{n\in\N},(x_n)_{n\in\N}\rangle \ge \alpha\lVert (x_n)_{n\in\N} \rVert^2
+\]
+f"ur alle $(x_n)_{n\in\N}\in\ell_2$ gen"ugt.
 
 \end{itemize}
