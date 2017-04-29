@@ -1,21 +1,56 @@
 \assignment{1.4}
+Wir "ubernehmen die Bezeichnungen aus der Aufgabenstellung und untersuchen die Matrix
 
+\[
+H:=
+\begin{pmatrix}
+H_1 & H_2 \\ H_2 & H_4 \end{pmatrix}
+= 2 \begin{pmatrix}
+\sum_{i=1}^m \xi_i^2 & \sum_{i=1}^m \xi_i \\
+\sum_{i=1}^m \xi_i & m
+\end{pmatrix}
+\]
 \begin{compactenum}[(i)]
- \item Es gilt nach Vorlesung
- \begin{displaymath}
-  x^THx=\sum_{i=1}^m(x_1\xi_i+x_2)^2.
- \end{displaymath}
- Sei nun $x\in\R^2$ beliebig. Wegen $(x_1\xi_i+x_2)^2\geq0$ ist $x^THx\geq0$ und weil $\xi\mapsto x_1\xi+x_2$ nur eine Nullstelle besitzt, die $\xi_i$ aber
- paarweise verschieden sind, gibt es ein $\xi_i$ mit $(x_1\xi_i+x_2)^2>0$. Somit ist $x^THx>0$ für jedes $x\in\R^2$ und $H$ also positiv definit.
- Nun ist $f$ zweimal stetig differenzierar und damit genau dann konvex, wenn $f''=H$ positiv definit ist. Hiermit folgt die Behauptung.
- \\
+\item Zum Beweis der positiven Definitheit
+bem"uhen wir das Hauptminorenkriterium: Da
+nach Voraussetzung $\xi_i \neq \xi_j$ f"ur alle $i,j \in {1,\ldots,m}$ mit $i\neq j$ gilt, folgt unmittelbar
+\[
+\det(H_1) = 2\sum_{i=1}^m \xi_i^2 > 0.
+\]
+Wir setzen nun $\xi := (\xi_1,\ldots,\xi_m)\in\R^m$. Da bekannterma"sen die Absch"atzung
+\[
+\sqrt m\cdot \lVert \xi \rVert_2 \ge \lVert \xi \rVert_1
+\]
+gilt, folgt auch
+\[
+H_1 H_4 = 4 m \sum_{i=1}^m \xi_i^2
+\ge 4\left(\sum_{i=1}^m \xi_i\right)^2
+= H_2^2.
+\]
+Da nun alle Eintr"age von $\xi$ verschieden
+sind, gilt sogar die strikte Ungleichung und
+damit
+\[
+\det(H) = H_1 H_4 - H_2^2 > 0.
+\]
+Es folgt die positive Definitheit von $H$.\\
+%Es gilt nach Vorlesung
+% \begin{displaymath}
+%  x^THx=\sum_{i=1}^m(x_1\xi_i+x_2)^2.
+% \end{displaymath}
+% Sei nun $x\in\R^2$ beliebig. Wegen $(x_1\xi_i+x_2)^2\geq0$ ist $x^THx\geq0$ und weil $\xi\mapsto x_1\xi+x_2$ nur eine Nullstelle besitzt, die $\xi_i$ aber
+% paarweise verschieden sind, gibt es ein $\xi_i$ mit $(x_1\xi_i+x_2)^2>0$. Somit ist $x^THx>0$ für jedes $x\in\R^2$ und $H$ also positiv definit.
+ %Nun ist $f$ zweimal stetig differenzierar und damit genau dann konvex, wenn $f''=H$ positiv definit ist. Hiermit folgt die Behauptung.
+ %\\
+
  \item Mit 1.1. wissen wir, dass $H$ sogar stark positiv ist. Wir haben also mit Cauchy-Schwarz und der starken Positivität
+ ein $\alpha > 0$ mit
  \begin{align*}
-  &f(x)&=&\frac{1}{2}\langle Hx,x\rangle+\langle b, x\rangle+c\\
-  &&\geq&\frac{1}{2}\langle Hx,x\rangle+\Vert b\Vert_2\Vert x\Vert_2+c\\
-  &&\geq&\frac{1}{2}\alpha\Vert x\Vert_2^2+\Vert b\Vert_2\Vert x\Vert_2+c \eqqcolon g(\Vert x\Vert_2).
+  f(x)&=\frac{1}{2}\langle Hx,x\rangle+\langle b, x\rangle+c\\
+  &\geq\frac{1}{2}\langle Hx,x\rangle-\Vert b\Vert_2\Vert x\Vert_2+c\\
+  &\geq\frac{1}{2}\alpha\Vert x\Vert_2^2-\Vert b\Vert_2\Vert x\Vert_2+c \eqqcolon g(\Vert x\Vert_2).
  \end{align*}
- Für quadratische, reelle Funktionen gilt bekanntlich
+ Wegen $\alpha >0$ folgt unmittelbar
  \begin{displaymath}
   \infty=\lim_{\Vert x\Vert_2\to\infty}g(\Vert x\Vert_2)\leq \lim_{\Vert x\Vert_2\to\infty} f(x).
  \end{displaymath}

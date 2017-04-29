@@ -52,29 +52,40 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
   \epi(f)=\R\times[0,\infty)\cup\{0\}\times[-1,\infty)
  \end{displaymath}
  abgeschlossen.
- \\ \\
- Wir zeigen stattdessen, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.\\
- Sei dazu zunächst $f$ unterhalbstetig, das hei"st, für alle $x\in\Rn$ gelte
+
+ \item[(iii)]
+ Wir zeigen zun"achst, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.
+ Zuerst wollen wir die Unterhalbstetigkeit von $f$ voraussetzen. Dann gilt
  \begin{displaymath}
   f(x)\leq\liminf_{t\to x}f(t).
  \end{displaymath}
- Sei ferner $(x_n,\alpha_n)_{n\in\N}\subset\epi(f)\subset\R^{n+1}$ eine beliebige in $\R^{n+1}$ konvergente Folge.
- Wir setzen $x\coloneqq \lim_{n\to\infty} x_n\in\Rn$ und $\alpha\coloneqq\lim_{n\to\infty}\alpha_n$. Dann gilt
+ für alle $x\in\Rn$. Sei nun $(x_n,\alpha_n)_{n\in\N}\subset\epi(f)$ eine beliebige in $\Rn\times\R$ konvergente Folge.
+ Wir setzen $x\coloneqq \lim_{n\to\infty} x_n$ und $\alpha\coloneqq\lim_{n\to\infty}\alpha_n$.
+ Dies ist wohldefiniert, da Folgenkonvergenz in $\Rn\times\R$ "aquivalent zu komponentenweiser Konvergenz ist. Dann gilt
  wegen der Unterhalbstetigkeit von $f$
  \begin{displaymath}
-  \alpha= \lim_{n\to\infty}\alpha_n \geq \liminf_{n\to\infty} f(x_n)\geq f(x),
+  \alpha= \lim_{n\to\infty}\alpha_n \geq \liminf_{n\to\infty} f(x_n)\geq f(x)
  \end{displaymath}
- also $(x,\alpha)\in\epi(f)$. Somit ist $\epi(f)$ abgeschlossen.\\
- Sei andererseits $\epi(f)$ abgeschlossen und $(x_n)_{n\in\N}\subset \Rn$ eine beliebige gegen $\Rn$ konvergente Folge. Dann ist
+ und somit $(x,\alpha)\in\epi(f)$. Es folgt die Abgeschlossenheit des Epigraphen von $f$.
+
+ \newpage
+
+ Ist nun $\epi(f)$ abgeschlossen und $(x_n)_{n\in\N}\subset \Rn$ eine beliebige in $\Rn$ konvergente Folge, so gilt
  wegen $(x_n,f(x_n))\in\epi(f)$ für alle $n\in\N$ und der Abgeschlossenheit von $\epi(f) $ auch
+ \begin{align*}
+ (x,\liminf_{n\to\infty}f(x_n)) &= (\lim_{n\to\infty}x_n, \liminf_{n\to\infty}f(x_n)) \\
+&= (\liminf_{n\to\infty} x_n, \liminf_{n\to\infty}f(x_n)) \\
+&\overset{(*)}{=} \liminf_{n\to\infty}(x_n, f(x_n)) \\
+&= \lim_{n\to\infty}(x_n, f(x_n)) \in \epi(f).
+ \end{align*}
+ Bei $(*)$ haben wir wieder die Aquivalenz von komponentenweiser und Folgenkonvergenz
+ genutzt.
+ Es gilt demnach
  \begin{displaymath}
-  (\lim_{n\to\infty} x_n,\liminf_{n\to\infty}f(x_n))=(x,\liminf_{n\to\infty}f(x_n))\in\epi(f)
+  f(x)\leq \liminf_{n\to\infty}f(x_n)
  \end{displaymath}
- und somit gilt
- \begin{displaymath}
-  f(x)\leq \liminf_{n\to\infty}f(x_n).
- \end{displaymath}
- \item[(iii)]
- Aus der Analysis-Übung vom 9. Dezember 2016 wissen wir, dass koerzive und unterhalbstetige Funktionen ein
- Minimum besitzen.
+ womit die Aussage bewiesen ist. \hfill$\Box$\\
+
+ Die eigentliche Behauptung folgt nun aus der Analysis 1 Übung vom 9. Dezember 2016. Dort wurde gezeigt, dass koerzitive und unterhalbstetige Funktionen ein
+ Minimum besitzen. \hfill$\Box$
 \end{itemize}

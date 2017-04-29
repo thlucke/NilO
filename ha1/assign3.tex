@@ -1,22 +1,31 @@
 \assignment{1.3}
 
-Wir nutzen im Folgenden die zum Hinweis äquivalente Aussage: Ein normierter Raum $X$ ist genau dann endlichdimensional, wenn beschränkte und abgeschlossene Mengen kompakt sind,
+Wir zeigen, dass ein normierter Raum ($X, \lVert\cdot\rVert)$ genau dann endlich
+dimensional ist, wenn die Niveaumenge
+$N(f,\alpha)$ f"ur jedes $\alpha\in\R$ und
+jedes stetige koerzitive Funktional
+$f\colon X\to\R$ kompakt ist. Dazu
+nutzen wir im Folgenden die zum Hinweis äquivalente Aussage: Ein normierter Raum ist genau dann endlichdimensional, wenn beschränkte und abgeschlossene Mengen kompakt sind,
 dies ist insbesondere genau dann erfüllt, wenn die abgeschlossene Einheitskugel kompakt ist.
-\\\\
-Sei $(X,\Vert\cdot\Vert)$ ein normierter Raum.\\
-\begin{itemize}
- \item [$\Rightarrow$] Sei $X$ zus"atzlich endlichdimensional und $a\in\R$ beliebig.
- Sei ferner $f$ ein beliebiges stetiges und koerzives Funktional.
- Weil $f$ koerziv ist, gibt es ein 
- $r\in\R$, sodass für alle $x\in X$ mit $\Vert x\Vert>r$ bereits $f(x)>\alpha$ gilt. Somit ist $N(\alpha) \subset \overline{B(0,r)}$,
- d.h. $N(\alpha)$ ist beschränkt.\\
- Sei nun $(x_n)_{n\in\N}\subset N(\alpha)\subset X$ eine gegen $x\in X$ konvergente Folge. Weil $f$ stetig ist, gilt
+
+\begin{proof}
+Wir wollen zun"achst annehmen, dass $X$ endlichdimensional ist. Sei $f\colon X\to\R$
+ein beliebig gew"ahltes stetiges und koerzitives Funktional und sei $\alpha\in\R$
+vorgegeben.
+ Dann gibt es ein
+ $r\in\R$, sodass für alle $x\in X$ mit $\Vert x\Vert>r$ bereits $f(x)>\alpha$ gilt. Somit ist $N(\alpha):=N(f,\alpha) \subset \overline{B(0,r)}$ und es folgt die
+ Beschr"anktheit der Niveaumenge $N(\alpha)$.\\
+
+ Sei nun $(x_n)_{n\in\N}\subset N(\alpha)\subset X$ eine gegen $x\in X$ konvergente Folge. Aus der Stetigkeit von $f$ folgt
  \begin{displaymath}
-  f(x)=\lim_{n\to\infty} f(x_n) =\lim_{n\to\infty} \alpha =\alpha.
+  \lim_{n\to\infty} f(x_n) = f(x) \le \lim_{n\to\infty} \alpha =\alpha.
  \end{displaymath}
-Somit ist auch $x\in N(\alpha)$ und die Niveaumenge abgeschlossen. Weil $X$ endlichdimensional ist, folgt mit Heine-Borel die Kompaktheit von $N(\alpha)$.\\
-\item [$\Leftarrow$] Für jedes $\alpha\in \R$ und jedes stetige, koerzive Funktional $f$ sei die Niveaumenge $N(\alpha)$ kompakt. Dann gilt
-dies insbesondere für $\Vert\cdot\Vert: X\to [0,\infty)$.
+und somit wegen $x\in N(\alpha)$ die Abgeschlossenheit der Niveaumenge $N(\alpha)$. Da $X$ endlichdimensional ist,
+folgt wegen des Satzes von Heine-Borel die
+Kompaktheit der Niveaumenge.\\
+
+Sei nun für jedes $\alpha\in \R$ und jedes stetige, koerzive Funktional $f\colon X\to\R$ die Niveaumenge $N(\alpha)$ kompakt. Dann gilt
+dies insbesondere für jede Norm $\Vert\cdot\Vert: X\to [0,\infty)$.
 Dabei ist $\Vert\cdot\Vert$ offensichtlich koerziv und stetig. Weiterhin ist $N(1)=\overline{B(0,1)}$ nach Voraussetzung kompakt.
 Dass die abgeschlossene Einheitskugel kompakt ist, ist äquivalent zur Endlichdimensionalit"at von $X$.
-\end{itemize}
+\end{proof}
