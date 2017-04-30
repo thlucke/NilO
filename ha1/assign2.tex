@@ -36,7 +36,7 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  \]
  Die Behauptung
  \begin{displaymath}
-  f(\lambda x+(1-\lambda)y)\leq\lambda\alpha+(1-\lambda)\beta
+  f(\lambda x+(1-\lambda)y)\leq\lambda f(x)+(1-\lambda)f(y)
  \end{displaymath}
  folgt sofort.
 
@@ -57,7 +57,7 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  Wir zeigen zun"achst, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.
  Zuerst wollen wir die Unterhalbstetigkeit von $f$ voraussetzen. Dann gilt
  \begin{displaymath}
-  f(x)\leq\liminf_{t\to x}f(t).
+  f(x)\leq\liminf_{t\to x}f(t)
  \end{displaymath}
  für alle $x\in\Rn$. Sei nun $(x_n,\alpha_n)_{n\in\N}\subset\epi(f)$ eine beliebige in $\Rn\times\R$ konvergente Folge.
  Wir setzen $x\coloneqq \lim_{n\to\infty} x_n$ und $\alpha\coloneqq\lim_{n\to\infty}\alpha_n$.
@@ -75,10 +75,9 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  \begin{align*}
  (x,\liminf_{n\to\infty}f(x_n)) &= (\lim_{n\to\infty}x_n, \liminf_{n\to\infty}f(x_n)) \\
 &= (\liminf_{n\to\infty} x_n, \liminf_{n\to\infty}f(x_n)) \\
-&\overset{(*)}{=} \liminf_{n\to\infty}(x_n, f(x_n)) \\
-&= \lim_{n\to\infty}(x_n, f(x_n)) \in \epi(f).
+&\overset{(*)}{=} \liminf_{n\to\infty}(x_n, f(x_n))\in \epi(f).
  \end{align*}
- Bei $(*)$ haben wir wieder die Aquivalenz von komponentenweiser und Folgenkonvergenz
+ Bei $(*)$ haben wir wieder die Äquivalenz von komponentenweiser und Folgenkonvergenz
  genutzt.
  Es gilt demnach
  \begin{displaymath}
