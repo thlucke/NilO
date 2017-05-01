@@ -29,6 +29,7 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
 (\lambda x+(1-\lambda)y,\lambda\alpha+(1-\lambda)\beta)\in\epi(f)
  \]
  konvex.
+
  Ist hingegen $\epi(f)$ konvex und sind $x,y\in\Rn$ sowie $\lambda\in[0,1]$ vorgegeben, erhalten wir mit
  $(x,f(x)),(y,f(y))\in\epi(f)$ auch
 \[
@@ -54,7 +55,8 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
  abgeschlossen.
 
  \item[(iii)]
- Wir zeigen zun"achst, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.
+ Wir zeigen, dass $f$ genau dann unterhalbstetig ist, wenn $\epi(f)$ abgeschlossen ist.
+
  Zuerst wollen wir die Unterhalbstetigkeit von $f$ voraussetzen. Dann gilt
  \begin{displaymath}
   f(x)\leq\liminf_{t\to x}f(t)
@@ -70,21 +72,21 @@ Es sei $f\colon\Rn\to\Rn$ eine Funktion.
 
  \newpage
 
- Ist nun $\epi(f)$ abgeschlossen und $(x_n)_{n\in\N}\subset \Rn$ eine beliebige in $\Rn$ konvergente Folge, so gilt
+ Ist nun $\epi(f)$ abgeschlossen, $x\in\Rn$ beliebig und $(x_n)_{n\in\N}$ eine beliebige gegen $x$ konvergente Folge in $\Rn$, so gilt
  wegen $(x_n,f(x_n))\in\epi(f)$ für alle $n\in\N$ und der Abgeschlossenheit von $\epi(f) $ auch
  \begin{align*}
  (x,\liminf_{n\to\infty}f(x_n)) &= (\lim_{n\to\infty}x_n, \liminf_{n\to\infty}f(x_n)) \\
 &= (\liminf_{n\to\infty} x_n, \liminf_{n\to\infty}f(x_n)) \\
 &\overset{(*)}{=} \liminf_{n\to\infty}(x_n, f(x_n))\in \epi(f).
  \end{align*}
- Bei $(*)$ haben wir wieder die Äquivalenz von komponentenweiser und Folgenkonvergenz
+ Bei $(*)$ haben wir wieder die Äquivalenz von komponentenweiser Konvergenz und Folgenkonvergenz
  genutzt.
  Es gilt demnach
  \begin{displaymath}
   f(x)\leq \liminf_{n\to\infty}f(x_n)
  \end{displaymath}
- womit die Aussage bewiesen ist. \hfill$\Box$\\
+ womit die Aussage bewiesen ist. 
 
- Die eigentliche Behauptung folgt nun aus der Analysis 1 Übung vom 9. Dezember 2016. Dort wurde gezeigt, dass koerzitive und unterhalbstetige Funktionen ein
+ Die eigentliche Behauptung folgt nun aus der Analysis-1-Übung vom 9. Dezember 2016. Dort wurde gezeigt, dass koerzitive und unterhalbstetige Funktionen ein
  Minimum besitzen. \hfill$\Box$
 \end{itemize}

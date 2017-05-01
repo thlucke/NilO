@@ -13,7 +13,7 @@ H_1 & H_2 \\ H_2 & H_4 \end{pmatrix}
 \begin{compactenum}[(i)]
 \item Zum Beweis der positiven Definitheit
 bem"uhen wir das Hauptminorenkriterium: Da
-nach Voraussetzung $\xi_i \neq \xi_j$ f"ur alle $i,j \in {1,\ldots,m}$ mit $i\neq j$ gilt, folgt unmittelbar
+nach Voraussetzung $\xi_i \neq \xi_j$ f"ur alle $i,j \in {1,\ldots,m}$ mit $i\neq j$ gilt, folgt für $m\geq 2$
 \[
 \det(H_1) = 2\sum_{i=1}^m \xi_i^2 > 0.
 \]
@@ -34,7 +34,7 @@ damit
 \det(H) = H_1 H_4 - H_2^2 > 0.
 \]
 Es folgt die positive Definitheit von $H$. \\ \\
-Ferner ist $f$ zweimal stetig differenzierar und damit genau dann konvex, wenn $f''=H$ positiv definit ist. 
+Ferner ist $f$ zweimal stetig differenzierbar und damit genau dann konvex, wenn $f''=H$ positiv definit ist. 
 Hiermit folgt die Behauptung.
 %Es gilt nach Vorlesung
 % \begin{displaymath}
@@ -45,7 +45,7 @@ Hiermit folgt die Behauptung.
  %
  %\\
 
- \item Mit 1.1. wissen wir, dass $H$ sogar stark positiv ist. Wir haben also mit Cauchy-Schwarz und der starken Positivität
+ \item Mit 1.1. wissen wir, dass $H$ sogar stark positiv ist. Wir haben also mithilfe der Cauchy-Schwarz-Ungleichung und der starken Positivität
  ein $\alpha > 0$ mit
  \begin{align*}
   f(x)&=\frac{1}{2}\langle Hx,x\rangle+\langle b, x\rangle+c\\
