@@ -22,9 +22,9 @@ Sei $A\colon \R^n\to\R^m$ linear und $b\in\R^m$. Wir betrachten die Abbildung $f
  \end{displaymath}
  d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist 
  \begin{displaymath}
-  \dim A^T A=\dim A=\dim A^T.
+  \rank A^T A=\rank A=\rank A^T.
  \end{displaymath}
  Daher muss bereits $\im A^T = \im A^TA$ gelten, d.h. es gibt eine Lösung $\bar x\in\R^n$ von $A^TAx=A^Tb$.\\
- \item Wenn $A$ injektiv ist, so ist jeder Eigenwert ungleich Null. Das gilt dann natürlich auch für $A^T$. Insgesamt sind also $A$ und $A^T$ bijektiv.
- Somit gibt es genau ein $\bar x=A^{-1}b\in\R^n$, das die notwendige Optimalitätsbedingung $A^TAx=A^Tb$ erfüllt.
+ \item Nach obiger Beobachtung ist $n=\rank A=\rank A^TA$ und somit $A^TA\colon \R^n\to\R^n$ ebenfalls injektiv und daher sogar bijektiv. Folglich erfüllt nur $x=(A^TA)^{-1}A^Tb$ die notwendige Optimalitätsbedingung
+ und ist nach (ii) einziger Minimierer.
 \end{compactenum}

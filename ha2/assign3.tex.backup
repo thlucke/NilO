@@ -20,7 +20,11 @@ Sei $A\colon \R^n\to\R^m$ linear und $b\in\R^m$. Wir betrachten die Abbildung $f
  \begin{displaymath}
   \langle A^TAx,x\rangle=\langle Ax, Ax\rangle
  \end{displaymath}
- d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist $\dim A^TA=\dim A$
- \item Wenn $A$ injektiv ist, so ist jeder Eigenwert ungleich Null. Das gilt dann natürlich auch für $A^T$. Insgesamt sind also $A$ und $A^T$ bijektiv.
+ d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist 
+ \begin{displaymath}
+  \rank A^T A=\rank A=\rank A^T.
+ \end{displaymath}
+ Daher muss bereits $\im A^T = \im A^TA$ gelten, d.h. es gibt eine Lösung $\bar x\in\R^n$ von $A^TAx=A^Tb$.\\
+ \item Wenn $A$ injektiv ist, so ist 
  Somit gibt es genau ein $\bar x=A^{-1}b\in\R^n$, das die notwendige Optimalitätsbedingung $A^TAx=A^Tb$ erfüllt.
 \end{compactenum}
