@@ -1,12 +1,12 @@
 \assignment{2.1}
-Es sei $f:\R^n\to R$ konvex und $x\in \R^n$. Für $h\in \R^n$ bezeichne $f'(x,h)$ die Richtungsableitung von $f$ im Punkt $x$ in Richtung $h$ und
+Es sei $f:\R^n\to \R$ konvex und $x\in \R^n$. Für $h\in \R^n$ bezeichne $f'(x,h)$ die Richtungsableitung von $f$ im Punkt $x$ in Richtung $h$ und
 weiter definieren wir 
 \begin{displaymath}
  g_h:\R\to\R,\quad g_h(t)=f(x+th).
 \end{displaymath}
 
 \begin{compactenum}[(i)]
- \item \footnote{vgl. \url{http://www.mathematik.uni-dortmund.de/~tdohnal/TEACH/Seminar\_AnaIII\_SS2013/Strickmann\_Konvexe\_Fkt.pdf; S.4}}
+ \item \footnote{vgl. \url{http://www.mathematik.uni-dortmund.de/~tdohnal/TEACH/Seminar\_AnaIII\_SS2013/Strickmann\_Konvexe\_Fkt.pdf}; S.4}
  Sei $h\in\R^n$ beliebig aber fest gewählt. Mit der Konvexität von $f$ folgt auch die Konvexität von $g_h$;
  betrachte dazu für $t_1,t_2\in \R, \, \lambda\in[0,1]$
  \begin{align*}
@@ -19,11 +19,19 @@ weiter definieren wir
   \frac{g(t)-g(t_1)}{t-t_1}\leq\frac{g(t_2)-g(t_1)}{t_2-t_1}\leq\frac{g(t_2)-g(t)}{t_2-t}.
  \end{displaymath}
  Diese Beziehung zeigt, dass der Differenzenquotient monoton wachsend ist: Fixiere dazu jeweils $t_1,t_2$ beziehungsweise $t$.
- Damit ist insbesondere $\frac{g(t)-g(0)}{t}$ für $t\searrow0$ monoton fallend und durch $\frac{g(0)-g(-1)}{1}$ nach unten beschränkt.
+ Damit ist insbesondere $\frac{g(t)-g(0)}{t}$ für $t\searrow0$ monoton fallend und durch $\frac{g(0)-g(-1)}{-1}$ nach unten beschränkt.
  Somit existiert 
  \begin{displaymath}
   \lim_{t\to 0} \frac{g(t)-g(0)}{t}=\lim_{t\to 0}\frac{f(x+th)-f(x)}{t}=f'(x,h).
  \end{displaymath}
+ \item Sei $h\in\R^n$ und $\lambda>0$, dann gilt mit $s=\lambda t$
+ \begin{align*}
+  &f'(x,\lambda h)&=&\lim_{t\to 0}\frac{f(x+t\lambda h)-f(x)}{t}=\lambda\lim_{t\to 0}\frac{f(x+t\lambda h)-f(x)}{\lambda t}\\
+  &&=&\lambda\lim_{s\to 0}\frac{f(x+s h)-f(x)}{s}=\lambda f'(x,h).
+ \end{align*}
+
+ \item
+ \item
 \end{compactenum}
 
 
