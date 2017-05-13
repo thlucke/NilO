@@ -1,1 +1,30 @@
-\assignment{1.3}
+\assignment{2.3}
+Sei $A\colon \R^n\to\R^m$ linear und $b\in\R^m$. Wir betrachten die Abbildung $f\colon \R^n\to\R$ mit
+\begin{displaymath}
+ f(x)=\frac{1}{2}\Vert Ax-b\Vert^2=\frac{1}{2}\langle Ax-b,Ax-b\rangle=\frac{1}{2}(\langle A^TAx,x\rangle-2\langle A^Tx,b\rangle+\langle b,b\rangle).
+\end{displaymath}
+\begin{compactenum}[(i)]
+ \item Dann ist die Ableitung in $x\in\R^n$, wie aus Analysis II bekannt, gegeben durch
+ \begin{displaymath}
+ f'(x)=  A^TAx- A^Tb
+ \end{displaymath}
+ gegeben. Damit ergibt sich der Gradient
+ \begin{displaymath}
+  \nabla f(x) = f'(x)^T= x^TA^TA-b^TA^T.
+ \end{displaymath}
+ \item Ist $\bar x\in\R^n$ ein Minimierer von $f$, dann ist insbesondere die notwendige Optimalitätsbedingung erfüllt, d.h. es gilt $f'(\bar x)=0$
+ und somit $A^TA\bar x=A^Tb$. Wie aus Numerik bekannt, ist $A^TA$ eine symmetrische, positiv semi-definite Matrix. Wegen $f''(x)=A^TA$ für alle $x\in\R^n$ ist $f$ also konvex.
+ Damit ist die Erfüllung der notwendigen Optimalitätsbedingung bereits hinreichend für Minimalität in einem Punkt.\\
+ \item Nach (i) genügt es zu zeigen, dass $A^Tb\in\im A^TA$ ist. Wir zeigen sogar $\im A^T = \im A^TA$. Dabei ist die Inklusion $\im A^T \supset \im A^TA$ klar. Für $x\in\R^n$
+ gilt weiterhin
+ \begin{displaymath}
+  \langle A^TAx,x\rangle=\langle Ax, Ax\rangle
+ \end{displaymath}
+ d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist 
+ \begin{displaymath}
+  \dim A^T A=\dim A=\dim A^T.
+ \end{displaymath}
+ Daher muss bereits $\im A^T = \im A^TA$ gelten, d.h. es gibt eine Lösung $\bar x\in\R^n$ von $A^TAx=A^Tb$.\\
+ \item Wenn $A$ injektiv ist, so ist jeder Eigenwert ungleich Null. Das gilt dann natürlich auch für $A^T$. Insgesamt sind also $A$ und $A^T$ bijektiv.
+ Somit gibt es genau ein $\bar x=A^{-1}b\in\R^n$, das die notwendige Optimalitätsbedingung $A^TAx=A^Tb$ erfüllt.
+\end{compactenum}

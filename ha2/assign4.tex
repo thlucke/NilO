@@ -1,2 +1,42 @@
-\assignment{1.4}
+\assignment{2.4}
 
+Gegeben sei eine stetig differenzierbare Funktion $f\colon \R^n\to\R$ und ein Punkt $\bar x\in\R^n$.
+Für $d\in\R^n$ definieren wir
+\begin{displaymath}
+ g_d\colon \R\to\R , \quad g_d(t)=f(\bar x+td). 
+\end{displaymath}
+\begin{compactenum}[(i)]
+ \item Sei $f$ konvex und besitze für jedes $d\in\R^n$ die Funktion $g_d$ in $\bar x\in\mathbb{R}$ ein lokales Minimum bei $t=0$.
+ Mit $f$ ist auch $g_d$ für $d\in \R^n$ differerenzierbar und mit der notwendigen Optimalitätsbedingung folgt
+ \begin{displaymath}
+  0=g_d'(0)=\lim_{t\to 0} \frac{g_d(t)-g(0)}{t}=\lim_{t\to0}\frac{f(\bar x+td)-f(\bar x)}{t}=f'(\bar x,d).
+ \end{displaymath}
+ Da $f$ stetig differenzierbar ist, so ist die Ableitung in einem Punkt durch die partiellen Ableitungen gegeben.
+ Insgesamt ist also $f'(\bar x)=0$. Zusammen mit der Konvexität folgt bereits, dass $\bar x$ ein Minimierer von $f$ ist.
+ \\
+ \item Wir betrachten die stetig differenzierbare Funktion
+ \begin{displaymath}
+ f\colon \R^2\to\R,\quad f(x,y)=(y-x^2)(y-2x^2).
+ \end{displaymath}
+ Für $d=\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}\backslash\{0\}$ ist 
+ \begin{displaymath}
+  g_d(t)=(ty-t^2x^2)(ty-2t^2x^2).
+ \end{displaymath} 
+ Für den Fall $x=0$ und $y\neq 0$ vereinfacht sich die Funktion sogar zu
+ \begin{displaymath}
+  g_d(t)=t^2y^2>0=g(0) \text{ für } t\neq 0
+ \end{displaymath}
+ und falls $y=0$ und $x\neq 0$ zu
+ \begin{displaymath}
+   g_d(t)=2t^4x^4>0=g(0) \text{ für } t\neq 0.
+ \end{displaymath}
+ Andernfalls ist für $|t|<\frac{2|y|}{x^2}$ auch
+ \begin{displaymath}
+  g_d(t)>0=g_d(0) \text{ mit }t\neq0.
+ \end{displaymath}
+ Insgesamt ist $t=0$ für jedes $d\in\R^2\backslash\{0\}$ ein lokaler Minimierer von $g_d$.
+ Trotzdem ist
+ \begin{displaymath}
+  f(0,0)=0>-1=f(1,1).
+ \end{displaymath}
+\end{compactenum}

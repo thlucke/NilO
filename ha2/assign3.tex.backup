@@ -1,30 +1,26 @@
-\assignment{1.3}
-
-\textcolor{red}{Gegebenfalls k"onnte man in einem Lemma zeigen, dass die Aussage des Satzes von Weierstraß genau dann gilt, wenn beschränkte und abgeschlossene Mengen kompakt sind.}
-\\\\
-Sei $(X,\Vert\cdot\Vert)$ ein normierter Raum.\\
-\begin{itemize}
- \item [$\Rightarrow$] Sei $X$ zus"atzlich endlichdimensional und $a\in\R$ beliebig.
- Sei ferner $f$ ein beliebiges stetiges und koerzives Funktional.
- Weil $f$ koerziv ist, gibt es ein 
- $r\in\R$, sodass für alle $x\in X$ mit $\Vert x\Vert>r$ bereits $f(x)>\alpha$ gilt. Somit ist $N(\alpha) \subset \overline{B(0,r)}$,
- d.h. $N(\alpha)$ ist beschränkt.\\
- Sei nun $(x_n)_{n\in\N}\subset N(\alpha)\subset X$ eine gegen $x\in X$ konvergente Folge. Weil $f$ stetig ist, gilt
- \begin{displaymath}
-  f(x)=\lim_{n\to\infty} f(x_n) =\lim_{n\to\infty} \alpha =\alpha.
- \end{displaymath}
-Somit ist auch $x\in N(\alpha)$ und die Niveaumenge abgeschlossen. Weil $X$ endlichdimensional ist, folgt mit Heine-Borel die Kompaktheit von $N(\alpha)$.\\
-\item [$\Leftarrow$] Für jedes $\alpha\in \R$ und jedes stetige, koerzive Funktional $f$ sei die Niveaumenge $N(\alpha)$ kompakt. Dann gilt
-dies insbesondere für
+\assignment{2.3}
+Sei $A\colon \R^n\to\R^m$ linear und $b\in\R^m$. Wir betrachten die Abbildung $f\colon \R^n\to\R$ mit
 \begin{displaymath}
- f_1\colon \R^n\to \R, x\mapsto\begin{cases}
-                              0, &x\in \overline{B(0,1)},\\
-                              \Vert x\Vert -1,&\text{sonst.}
-                             \end{cases}
+ f(x)=\frac{1}{2}\Vert Ax-b\Vert^2=\frac{1}{2}\langle Ax-b,Ax-b\rangle=\frac{1}{2}(\langle A^TAx,x\rangle-2\langle A^Tx,b\rangle+\langle b,b\rangle).
 \end{displaymath}
-Dabei ist $f$ offensichtlich koerziv und stetig. Weiterhin ist $N(0)=\overline{B(0,1)}$ nach Voraussetzung kompakt.
-Dass die abgeschlossene Einheitskugel kompakt ist, ist äquivalent zur Endlichdimensionalit"at von $X$.\\\\
-\textcolor{red}{W"ahlt man statt 1 einen beliebigen Radius $r>0$, so kann man ein Kompaktum um eine beliebige beschränkte Folge legen und 
-weil ("Uberdeckungs-)Kompaktheit Folgenkompaktheit impliziert, gibt es eine konvergente Teilfolge.\\
-Alternativ ist jede abgschlossene Teilmenge eines Kompaktums wieder kompakt und mit dem Lemma folgte das Gewünschte.}
-\end{itemize}
+\begin{compactenum}[(i)]
+ \item Dann ist die Ableitung in $x\in\R^n$, wie aus Analysis II bekannt, gegeben durch
+ \begin{displaymath}
+ f'(x)=  A^TAx- A^Tb
+ \end{displaymath}
+ gegeben. Damit ergibt sich der Gradient
+ \begin{displaymath}
+  \nabla f(x) = f'(x)^T= x^TA^TA-b^TA^T.
+ \end{displaymath}
+ \item Ist $\bar x\in\R^n$ ein Minimierer von $f$, dann ist insbesondere die notwendige Optimalitätsbedingung erfüllt, d.h. es gilt $f'(\bar x)=0$
+ und somit $A^TA\bar x=A^Tb$. Wie aus Numerik bekannt, ist $A^TA$ eine symmetrische, positiv semi-definite Matrix. Wegen $f''(x)=A^TA$ für alle $x\in\R^n$ ist $f$ also konvex.
+ Damit ist die Erfüllung der notwendigen Optimalitätsbedingung bereits hinreichend für Minimalität in einem Punkt.\\
+ \item Nach (i) genügt es zu zeigen, dass $A^Tb\in\im A^TA$ ist. Wir zeigen sogar $\im A^T = \im A^TA$. Dabei ist die Inklusion $\im A^T \supset \im A^TA$ klar. Für $x\in\R^n$
+ gilt weiterhin
+ \begin{displaymath}
+  \langle A^TAx,x\rangle=\langle Ax, Ax\rangle
+ \end{displaymath}
+ d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist $\dim A^TA=\dim A$
+ \item Wenn $A$ injektiv ist, so ist jeder Eigenwert ungleich Null. Das gilt dann natürlich auch für $A^T$. Insgesamt sind also $A$ und $A^T$ bijektiv.
+ Somit gibt es genau ein $\bar x=A^{-1}b\in\R^n$, das die notwendige Optimalitätsbedingung $A^TAx=A^Tb$ erfüllt.
+\end{compactenum}
