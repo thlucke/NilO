@@ -1,2 +1,1 @@
-homework
- hallo ich bin es @thoma
+Die Aufgabe 2.(ii) kann ich leider gar nicht lösen. Habe mir bisher aber nur die Richtungsableitungen in Koordinatenrichtung angeschaut und weiß nicht weiter.
