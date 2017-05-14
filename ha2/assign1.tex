@@ -29,9 +29,18 @@ weiter definieren wir
   &f'(x,\lambda h)&=&\lim_{t\to 0}\frac{f(x+t\lambda h)-f(x)}{t}=\lambda\lim_{t\to 0}\frac{f(x+t\lambda h)-f(x)}{\lambda t}\\
   &&=&\lambda\lim_{s\to 0}\frac{f(x+s h)-f(x)}{s}=\lambda f'(x,h).
  \end{align*}
-
- \item
- \item
+ \item Seien $h_1, h_2\in\R^n$. Mit (ii) gilt dann
+ \begin{align*}
+  &f'(x,H_1+h_2)&=&\lim_{t\to 0} \frac{f(x+t(h_1+h_2))-f(x)}{t}\\
+  &&=&\lim_{t\to 0} \frac{f((\frac{1}{2}+\frac{1}{2})x+\frac{1}{2} 2th_1+\frac{1}{2}2th_2))-(\frac{1}{2}+\frac{1}{2})f(x)}{t}\\
+  &&\leq& \lim_{t\to 0} \frac{\frac{1}{2}f(x+2th_1)-\frac{1}{2}f(x)+\frac{1}{2}f(x+ 2th_2)-\frac{1}{2}f(x)}{t}\\
+  &&=& \frac{1}{2} f'(x+2h_1)+\frac{1}{2} f'(x+2h_2)\\
+  &&=& f'(x,h_1)+f'(x,h_2).
+ \end{align*}
+ \item Als Gegenbeispiel untersuchen wir die euklidische Norm $||\cdot||\colon \R^2\to\R$ und ihre Richtungsableitung in Null. Dann ist
+ \begin{displaymath}
+  f'(0,e_1)=1 \quad\text{ und }\quad f'(0,e_2)=1 \quad \text{ sowie }\quad f'(0, e_1+e_2)=\sqrt{2}.
+ \end{displaymath}
 \end{compactenum}
 
 
