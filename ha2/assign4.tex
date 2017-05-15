@@ -18,25 +18,24 @@ Für $d\in\R^n$ definieren wir
  \begin{displaymath}
  f\colon \R^2\to\R,\quad f(x,y)=(y-x^2)(y-2x^2).
  \end{displaymath}
- Für $d=\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}\backslash\{0\}$ ist 
+ Für $\bar x=0$ und $d=\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{R}\backslash\{0\}$ ist 
  \begin{displaymath}
   g_d(t)=(ty-t^2x^2)(ty-2t^2x^2).
  \end{displaymath} 
- Für den Fall $x=0$ und $y\neq 0$ vereinfacht sich die Funktion sogar zu
+ Im Fall $x=0$ und $y\neq 0$ vereinfacht sich die Funktion für $t\neq 0$ sogar zu
  \begin{displaymath}
-  g_d(t)=t^2y^2>0=g(0) \text{ für } t\neq 0
+  g_d(t)=t^2y^2>0=g(0)
  \end{displaymath}
- und falls $y=0$ und $x\neq 0$ zu
+ und im Fall $y=0$ und $x\neq 0$ für $t\neq 0$ zu
  \begin{displaymath}
-   g_d(t)=2t^4x^4>0=g(0) \text{ für } t\neq 0.
+   g_d(t)=2t^4x^4>0=g(0).
  \end{displaymath}
- Andernfalls ist für $|t|<\frac{2|y|}{x^2}$ auch
+ Andernfalls ist für $0<|t|<\frac{|y|}{2x^2}$ auch
  \begin{displaymath}
-  g_d(t)>0=g_d(0) \text{ mit }t\neq0.
+  g_d(t)>0=g_d(0).
  \end{displaymath}
- Insgesamt ist $t=0$ für jedes $d\in\R^2\backslash\{0\}$ ein lokaler Minimierer von $g_d$.
- Trotzdem ist
+Insgesamt ist $t=0$ für jedes $d\in\R^2\backslash\{0\}$ ein lokaler Minimierer von $g_d$, aber
  \begin{displaymath}
-  f(0,0)=0>-1=f(1,1).
+  f(0,0)=0>-1=f(3,\sqrt{2}).
  \end{displaymath}
 \end{compactenum}
