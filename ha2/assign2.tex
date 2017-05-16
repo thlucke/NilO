@@ -11,19 +11,15 @@ Sei also $\lambda\geq 0$ beliebig.
  \begin{displaymath}
   f_\lambda(x)=\frac{1}{2}\Vert x-z\Vert_2^2+\lambda\Vert x\Vert_1\geq \frac{1}{2}\Vert x-z\Vert_2^2\geq \Vert x\Vert_2^2-\Vert x\Vert_2\Vert z\Vert_2+\Vert z \Vert_2^2\geq \Vert x\Vert_2(\Vert x\Vert_2-\Vert z\Vert_2)
  \end{displaymath}
-und $\lim\limits_{\|x\|_2\to\infty} f_\lambda(x)\geq \lim\limits_{\|x\|_2\to\infty}\|x\|_2(\|x\|_2-\|z\|_2)=\infty$ folgt die Koerzitivität von $f_\lambda$.\\\\
- Für den Nachweis der Konvexität seien $x,y\in\R^n,\,x\neq y$ und $t\in(0,1)$. Mit der Parallelogrammgleichung gilt
- \begin{align*}
-  &f_\lambda(tx+(1-t)y)&=&\frac{1}{2}\Vert tx+(1-t)y-z\Vert_2^2+\lambda\Vert tx+(1-t)y\Vert_1\\
-  &&\leq& \frac{1}{2}\Vert tx+(1-t)y-tz-(1-t)z\Vert_2^2+\lambda(t\Vert x\Vert_1+(1-t)\Vert y\Vert_1)\\
-  &&=&\frac{1}{2}\Vert t(x-z)+(1-t)(y-z)\Vert_2^2+\lambda(t\Vert x\Vert_1+(1-t)\Vert y\Vert_1)\\
-  &&=&\Vert t(x-z)\Vert_2^2+\Vert(1-t)(y-z)\Vert_2^2\\&&&-\frac{1}{2}\Vert t(x-z)-(1-t)(y-z)\Vert_2^2 +\lambda(t\Vert x\Vert_1+(1-t)\Vert y\Vert_1)\\
-  &&\leq&\Vert t(x-z)\Vert_2^2+\Vert(1-t)(y-z)\Vert_2^2 +\lambda(t\Vert x\Vert_1+(1-t)\Vert y\Vert_1)\\
-  &&=&t^2\Vert x-z\Vert_2^2+\lambda t\Vert x\Vert_1+(1-t)^2\Vert y-z\Vert_2^2 +\lambda(1-t)\Vert y\Vert_1\\
-  &&<&\frac{t}{2}\Vert x-z\Vert_2^2+\lambda t\Vert x\Vert_1+\frac{(1-t)}{2}\Vert y-z \Vert_2^2 +\lambda(1-t)\Vert y\Vert_1\\
-  &&=&t f_\lambda(x)+(1-t) f_\lambda(y).
- \end{align*}
- Insgesamt ist $f_\lambda$ also streng konvex und somit insbesondere stetig sowie koerzitiv. Damit besitzt $f_\lambda$ einen eindeutigen Minimierer $x_\lambda$.
+ folgt die Koerzitivität von $f_\lambda$.\\
+ Auf der anderen Seite ist $f_\lambda$ Summe einer streng konvexen Funktion $n: x\mapsto \Vert x-z\Vert_2^2$ und einer konvexen Funktion $x\mapsto \Vert x\Vert_1$ und
+ somit selbst streng konvex. Bemerke dazu, dass $n''(x)=\id_{\R^n}$ positiv definit ist und daher $n$ streng konvex und dass für alle $x,y\in\R^n$ und $t\in [0,1]$
+ mit der Dreiecksungleichung
+ \begin{displaymath}
+  \Vert tx+(1-t)y\Vert_1\leq t\Vert x\Vert_1+(1-t)\Vert y\Vert_1
+ \end{displaymath}
+ gilt.
+ Insgesamt ist $f_\lambda$ also streng konvex und somit insbesondere stetig sowie koerziv und besitzt damit einen eindeutigen Minimierer $x_\lambda$.
  \\
  \item
 %  \item Sei $\lambda\geq 0$ beliebig. Dann sind die Richtungsableitungen an der Stelle $x$ in Koordinatenrichtung $e_k,\, k=1,\dots, n$ gegeben durch
