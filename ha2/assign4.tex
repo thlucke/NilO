@@ -12,7 +12,7 @@ Für $d\in\R^n$ definieren wir
   0=g_d'(0)=\lim_{t\to 0} \frac{g_d(t)-g(0)}{t}=\lim_{t\to0}\frac{f(\bar x+td)-f(\bar x)}{t}=f'(\bar x,d).
  \end{displaymath}
  Da $f$ stetig differenzierbar ist, so ist die Ableitung in einem Punkt durch die partiellen Ableitungen gegeben.
- Insgesamt ist also $f'(\bar x)=0$. Zusammen mit der Konvexität folgt bereits, dass $\bar x$ ein Minimierer von $f$ ist.
+ Insgesamt ist also $f'(\bar x)=[f'(\bar x,e_1),...,f'(\bar x,e_n)]=0$. Zusammen mit der Konvexität folgt bereits, dass $\bar x$ ein Minimierer von $f$ ist.
  \\
  \item Wir betrachten die stetig differenzierbare Funktion
  \begin{displaymath}
@@ -22,20 +22,27 @@ Für $d\in\R^n$ definieren wir
  \begin{displaymath}
   g_d(t)=(ty-t^2x^2)(ty-2t^2x^2).
  \end{displaymath} 
- Im Fall $x=0$ und $y\neq 0$ vereinfacht sich die Funktion für $t\neq 0$ sogar zu
+ Im Fall $x=0$ und $y\neq 0$ gilt für $t\neq 0$
  \begin{displaymath}
   g_d(t)=t^2y^2>0=g(0)
  \end{displaymath}
- und im Fall $y=0$ und $x\neq 0$ für $t\neq 0$ zu
+ Im Fall $y=0$ und $x\neq 0$ gilt für $t\neq 0$ analog
  \begin{displaymath}
    g_d(t)=2t^4x^4>0=g(0).
  \end{displaymath}
- Andernfalls ist für $0<|t|<\frac{|y|}{2x^2}$ auch
+Im verbleibenden Fall $x\neq 0$ und $y\neq 0$ gilt für $t<0$
+ \begin{displaymath}
+   g_d(t)=(ty-t^2x^2)(ty-2t^2x^2)=t^2(y-tx^2)(y-2tx^2)>t^2y^2>0
+ \end{displaymath}
+und für $t\in]0,\frac{y}{2x^2}[$ wegen $ty-t^2x^2>0$ und $ty-2t^2x^2>0$ schließlich ebenfalls
+ \begin{displaymath}
+   g_d(t)=(ty-t^2x^2)(ty-2t^2x^2)=t^2(y-tx^2)(y-2tx^2)>0
+ \end{displaymath}
+Es gibt also stets eine punktierte Umgebung $U$ um $0$, so dass für alle $t\in U$ gilt:
  \begin{displaymath}
   g_d(t)>0=g_d(0).
  \end{displaymath}
-Insgesamt ist $t=0$ für jedes $d\in\R^2\backslash\{0\}$ ein lokaler Minimierer von $g_d$, aber
- \begin{displaymath}
-  f(0,0)=0>-1=f(3,\sqrt{2}).
- \end{displaymath}
+Daher ist $t=0$ für $\bar x=0$ und für jedes $d\in\R^2\backslash\{0\}$ ein lokaler Minimierer von $g_d$.\\\\ Allerdings ist $f$ auf der Menge $M=\{(x,y)\in\R^2\backslash \{0\}\mid y=\frac{3}{2}x^2\}$ negativ:
+$$f(x,y)=(y-x^2)(y-2x^2)=\left(\frac{1}{2}x^2\right)\left(-\frac{1}{2}x^2\right)=-\frac{1}{4}x^4<0$$
+Für alle $r>0$ gilt $B_r(0)\cap M\neq\emptyset$. Daher ist $\bar x=0$ kein lokaler Minimierer von $f$.
 \end{compactenum}
