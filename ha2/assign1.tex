@@ -6,7 +6,7 @@ weiter definieren wir
 \end{displaymath}
 
 \begin{compactenum}[(i)]
- \item \footnote{vgl. \url{http://www.mathematik.uni-dortmund.de/~tdohnal/TEACH/Seminar\_AnaIII\_SS2013/Strickmann\_Konvexe\_Fkt.pdf}; S.4}
+ \item %\footnote{vgl. \url{http://www.mathematik.uni-dortmund.de/~tdohnal/TEACH/Seminar\_AnaIII\_SS2013/Strickmann\_Konvexe\_Fkt.pdf}; S.4}
  Sei $h\in\R^n$ beliebig, aber fest gewählt. Mit der Konvexität von $f$ folgt auch die Konvexität von $g_h$;
  betrachte dazu für $t_1,t_2\in \R, \, \lambda\in[0,1]$
  \begin{align*}
@@ -21,7 +21,7 @@ weiter definieren wir
 Diese Ungleichung zeigt, dass der Differenzenquotient monoton wachsend ist (fixiere dazu jeweils $t_1,t_2$ beziehungsweise $t$). Damit ist insbesondere $\frac{g(t)-g(0)}{t}$ für $t\searrow0$ monoton fallend und durch $\frac{g(0)-g(-1)}{-1}$ nach unten beschränkt.
  Somit existiert 
  \begin{displaymath}
-  \lim_{t\to 0} \frac{g(t)-g(0)}{t}=\lim_{t\to 0}\frac{f(x+th)-f(x)}{t}=f'(x,h).
+  \lim_{t\searrow 0} \frac{g(t)-g(0)}{t}=\lim_{t\searrow 0}\frac{f(x+th)-f(x)}{t}=f'(x,h).
  \end{displaymath}
  \item Sei $h\in\R^n$ und $\lambda>0$, dann gilt mit $s=\lambda t$
  \begin{align*}
