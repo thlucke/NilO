@@ -13,18 +13,15 @@ Sei $A\colon \R^n\to\R^m$ linear und $b\in\R^m$. Wir betrachten die Abbildung $f
   \nabla f(x) = f'(x)^T= x^TA^TA-b^TA^T.
  \end{displaymath}
  \item Ist $\bar x\in\R^n$ ein Minimierer von $f$, dann ist insbesondere die notwendige Optimalitätsbedingung erfüllt, d.h. es gilt $f'(\bar x)=0$
- und somit $A^TA\bar x=A^Tb$. Wie aus Numerik bekannt, ist $A^TA$ eine symmetrische, positiv semi-definite Matrix. Wegen $f''(x)=A^TA$ für alle $x\in\R^n$ ist $f$ also konvex.
+ und somit $A^TA\bar x=A^Tb$. Wie aus Numerik bekannt, ist $A^TA$ eine symmetrische, positiv semidefinite Matrix. Wegen $f''(x)=A^TA$ für alle $x\in\R^n$ ist $f$ also konvex.
  Damit ist die Erfüllung der notwendigen Optimalitätsbedingung bereits hinreichend für Minimalität in einem Punkt.\\
  \item Nach (i) genügt es zu zeigen, dass $A^Tb\in\im A^TA$ ist. Wir zeigen sogar $\im A^T = \im A^TA$. Dabei ist die Inklusion $\im A^T \supset \im A^TA$ klar. Für $x\in\R^n$
  gilt weiterhin
  \begin{displaymath}
   \langle A^TAx,x\rangle=\langle Ax, Ax\rangle
  \end{displaymath}
- d.h. $x\in \ker A^TA$ genau dann, wenn $x\in \ker A$ ist, kurz $\ker A^TA=\ker A$. Damit ist 
- \begin{displaymath}
-  \rank A^T A=\rank A=\rank A^T.
- \end{displaymath}
- Daher muss bereits $\im A^T = \im A^TA$ gelten, d.h. es gibt eine Lösung $\bar x\in\R^n$ von $A^TAx=A^Tb$.\\
- \item Nach obiger Beobachtung ist $n=\rank A=\rank A^TA$ und somit $A^TA\colon \R^n\to\R^n$ ebenfalls injektiv und daher sogar bijektiv. Folglich erfüllt nur $x=(A^TA)^{-1}A^Tb$ die notwendige Optimalitätsbedingung
- und ist nach (ii) einziger Minimierer.
+Damit folgt aus $x\in\ker A^TA$, d.h. $A^TAx=0$, dass
+$$\|Ax\|^2=\langle Ax,Ax \rangle=\langle A^TAx,x \rangle=\langle 0,x \rangle=0.$$
+Also ist $\|Ax\|=0$ und wegen der positiven Definitheit $Ax=0$, d.h. $x\in\text{ker}(A)$. Umgekehrt folgt aus $x\in\ker A$, d.h. $Ax=0$, dass $A^TAx=0$, d.h. $x\in\ker A^TA$. Also ist $\ker A^TA=\ker A$ und $  \rank A^T A=\rank A=\rank A^T$.  Daher muss bereits $\im A^T = \im A^TA$ gelten, d.h. es gibt eine Lösung $\bar x\in\R^n$ von $A^TAx=A^Tb$.\\
+ \item Die quadratische Matrix $A^TA\in \R^{n,n}$ hat wegen (iii) vollen Rang $\rank A^TA=\rank A=n$ und ist somit invertierbar, d.h. die zugehörige Abbildung $\R^n\to\R^n$ ist bijektiv. Folglich erfüllt nur $x=(A^TA)^{-1}A^Tb$ die notwendige Optimalitätsbedingung und ist nach (ii) einziger Minimierer.
 \end{compactenum}
