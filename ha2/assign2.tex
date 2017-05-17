@@ -18,9 +18,23 @@ wegen der Dreiecksungleichung
   \Vert tx+(1-t)y\Vert_1\leq t\Vert x\Vert_1+(1-t)\Vert y\Vert_1
  \end{displaymath}
 gilt. Also ist $f_\lambda$ selbst streng konvex und somit insbesondere stetig. Aus der Stetigkeit und Koerzitivität folgt, dass $f_\lambda$ einen eindeutigen Minimierer $x_\lambda$ besitzt.
- \\
- \item
-%  \item Sei $\lambda\geq 0$ beliebig. Dann sind die Richtungsableitungen an der Stelle $x$ in Koordinatenrichtung $e_k,\, k=1,\dots, n$ gegeben durch
+\item Nach (i) ist der Minimierer $x_\lambda=\underset{y\in\R^n}{\text{argmin}} f_\lambda(x)$ eindeutig bestimmt.
+Löst ein $x\in\mathbb R^n$ nun die Variationsungleichung, gilt also $f'(x,h)\geq 0$ für alle $h\in\R^n$, so gilt $x=x_\lambda$.\\\\
+Dann gilt insbesondere $f'(x_\lambda,h)\geq 0$ für jeden k-ten Einheitsvektoren $e_k=(\delta_{ik})_{i=1,...,n}$ und ihre additiven Inversen $-e_k=(-\delta_{ik})_{i=1,...,n}$.\\\\
+Mit $x_\lambda=(x_k)_{k=1,...,n}$ gilt für $k=1,...,n$ also:
+$$f_\lambda'(x_\lambda,e_k)=\lim\limits_{t\searrow 0}\frac{f(x_\lambda+te_k)-f(x_\lambda)}{t}=(x_k-z_k)+\lambda\sgn(x_k)\geq 0$$
+und
+$$f_\lambda'(x_\lambda,-e_k)=\lim\limits_{t\searrow 0}\frac{f(x_\lambda-te_k)-f(x_\lambda)}{t}=-((x_k-z_k)+\lambda\sgn(x_k))\leq 0.$$
+Aus beiden Ungleichungen ergibt sich die Gleichung
+$$x_k-z_k+\lambda\sgn(x_k)=0$$
+und durch Umstellen die implizite Identität
+$$x_k=z_k-\lambda\sgn(x_k).$$
+Ist $z_k>\lambda$, so folgt $\sgn(x_k)=1$, da für $x_k<0$ der Widerspruch $0>x_k=z_k+\lambda>0$ entsteht. Ist $z_k<\lambda$, so folgt analog $\sgn(x_k)=-1$. Für $z_k=\lambda$ gilt aus ähnlichen Gründen $\sgn(x_k)=0$, also $x_k=0$. Daher erhalten wir sogar die explizite Formel
+$$x_k=z_k-\lambda\sgn(z_k-\lambda).$$\\\\
+Bemerkung:\\\\
+Sei nun $|z_k|\leq \lambda$, d.h. $z_k<\lambda$ und $-z_k<\lambda$. Aus $z_k<\lambda$ folgt wie oben $\sgn(x_k)=-1$ da sonst $0>x_k=z_k+\lambda>0$ zum Widerspruch führt.  Es folgt also $\sgn(x_k)=0$ und damit $x_k=0$. Also kommen für große $\lambda$ dünnbesetzte Vektoren als Lösungen heraus.\\\\
+Sei nun $\lambda\geq \|z\|_\infty=\max\limits_{k=1,...,n}|z_k|$. Für $k=1,...,n$ folgt $|z_k|\leq\lambda$ und daher $x_k=0$. Also gilt $x_\lambda=0$.
+%Sei $\lambda\geq 0$ beliebig. Dann sind die Richtungsableitungen an der Stelle $x$ in Koordinatenrichtung $e_k,\, k=1,\dots, n$ gegeben durch
 %  \begin{displaymath}
 %   f'(x,e_k)=(x_k-z_k)+\lambda \sgn(x_k).
 %  \end{displaymath}
