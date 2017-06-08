@@ -7,7 +7,7 @@ und ein Startwert $x^0\in\R^n$.\\
  Weiter sei $(x^k)_{k\in\N}$ eine durch ein Abstiegsverfahren mit effizienter
  Schrittweite erzeugte Folge, d.h. es gibt ein $c>0$ mit
 \begin{displaymath}
- f(x^{k+1})\leq f(x^k)-c\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2.
+ f(x^{k+1})\leq f(x^k)-c\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2 \quad\text{für alle }k\in\N.
 \end{displaymath}
  Damit ist die Folge $(f(x^k))_{k\in\N}$ monoton fallend und beschränkt, weil
  $f$ beschränkt ist. Somit ist $(f(x^k))_{k\in\N}$ konvergent. Durch Kontraposition
@@ -18,11 +18,11 @@ und ein Startwert $x^0\in\R^n$.\\
  Teilfolge. Weil die Schrittweite effizient gewählt ist und für ein Abstiegsverfahren
   stets $\langle\nabla f(x),d(x)\rangle<0$ gilt, ist wegen
  \begin{displaymath}
- f(x^{k+1})\leq f(x^k)-c\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2.
+ f(x^{k+1})\leq f(x^k)-c\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2 \quad\text{für alle }k\in\N, \, c>0
 \end{displaymath}
  die Bildfolge $(f(x^k))_{k\in\N}$ \textit{streng} monoton fallend. Insbesondere konvergiert dann wegen der Stetigkeit von $f$
- auch $(f(x^{k_l}))_{l\in\N}$ streng monoton von \textit{oben} gegen $x$, d.h. für jedes $\varepsilon >0$ gibt es ein
- $l\in\mathbb{N}$, sodass $0<f(x^{k_l})-f(x)<\varepsilon$ ist. Somit kann $x$ kein lokaler Maximierer sein.
+ auch $(f(x^{k_l}))_{l\in\N}$ streng monoton von \textit{oben} gegen $f(x)$, d.h. für jedes $\varepsilon >0$ gibt es ein
+ $l\in\mathbb{N}$, sodass $\Vert x^{k_l}-x\Vert <\varepsilon$ und $f(x^{k_l})>f(x)$ ist. Somit kann $x$ kein lokaler Maximierer sein.
  \\
  \item Wir zeigen, dass diese Aussage nicht wahr sein kann. Wir betrachten dazu für $n=1$
  die Funktion $f=\sin(\sqrt{\frac{3\pi}{2}}\cdot)$ und den Startwert $x_0=0$. Dann ist
