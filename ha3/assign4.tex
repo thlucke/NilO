@@ -1,1 +1,18 @@
 \assignment{3.4}
+
+Wir "ubernehmen die Notationen und Voraussetzungen aus der Aufgabenstellung. Da mit $f$ ein quadratisches Optimierungsproblem gegeben ist, setzen wir analog zur Bemerkung
+auf der Seite 36 im Skript
+\[
+\varphi(\sigma) = f(x+\sigma d) =
+\frac{1}{2}\langle A(x+\sigma d),x+\sigma d \rangle + \langle b, x+\sigma d \rangle + c
+\]
+ und l"osen die Gleichung $\varphi'(\sigma) = 0$.\\
+
+ Berechnen wir zun"achst die Ableitung von $\varphi$ nach $\sigma$. Mit den "ublichen Regeln der Differenziation erhalten wir
+\[
+\varphi'(\sigma) = \frac{\langle Ax, d\rangle + \langle Ad, x \rangle}{2} + \sigma\langle Ad, d\rangle + \langle b,d \rangle .
+\]
+Die bereits erw"ahnte Forderung $\varphi'(\sigma) = 0$ f"uhrt zur optimalen Schrittweite
+\[
+\sigma = - \frac{\frac{\langle Ax, d\rangle + \langle Ad, x \rangle}{2} + \langle b,d \rangle}{\langle Ad, d \rangle}.
+\]

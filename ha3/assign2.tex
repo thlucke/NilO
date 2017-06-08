@@ -1,14 +1,14 @@
 \assignment{3.2}
 
-Es sei $f\colon\R^n\to\R$ stetig differenzierbar, streng konvex und koerziv. 
+Es sei $f\colon\R^n\to\R$ stetig differenzierbar, streng konvex und koerziv.
 Damit hat $f$ ein eindeutiges Minimum $\bar x\in\R^n$ und $\nabla f(x)=0$ genau
 dann, wenn $x=\bar x$ ist. ($\dagger$)
-Weiter genüge die im Abstiegsverfahren gewählte Richtung $x\mapsto d(x)$ 
+Weiter genüge die im Abstiegsverfahren gewählte Richtung $x\mapsto d(x)$
 folgender Bedingung: Es gibt Konstanten $c_1,c_2>0$ und $p>-1$ mit
 \begin{displaymath}\label{star}
  \frac{|\langle \nabla f(x),d(x)\rangle|}{\Vert\nabla f(x)\Vert\Vert d(x)\Vert}\geq\min\{c_1,c_2\Vert \nabla f(x)\Vert^p\}\tag{$\star$}
 \end{displaymath}
-für alle $x\in\R^n$. Weiter seien die Schrittweiten $(x,d(x))\mapsto \sigma(x)$ 
+für alle $x\in\R^n$. Weiter seien die Schrittweiten $(x,d(x))\mapsto \sigma(x)$
 effizient gewählt, d.h. es gibt ein $c_3>0$ mit
 \begin{displaymath}\label{doublestar}
  f(x+d(x)\sigma(x))\leq f(x)-c_3\left(\frac{\langle\nabla f(x),d(x)\rangle}{\Vert d(x)\Vert}\right)^2 \tag{$\star\star$}
@@ -16,27 +16,28 @@ effizient gewählt, d.h. es gibt ein $c_3>0$ mit
 für alle $x\in\R^n$.
 \\ \\
 Sei $x^0\in\R^n$ beliebig. Wir zeigen zunächst, dass die Folge der Gradienten
-$(\nabla f(x^k))_k$ des  Verfahrens gegen Null konvergiert. 
+$(\nabla f(x^k))_{k\in\N}$ des  Verfahrens gegen Null konvergiert.
 \\\\
-Wegen 
+Wegen
 \begin{displaymath}
  c_3\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2\geq0
 \end{displaymath}
-und  mit \eqref{doublestar} ist die Folge $(f(x^k))_k$ monoton fallend und aufgrund der Beschränktheit von $f$ auch konvergent.
+und  mit \eqref{doublestar} ist die Folge $(f(x^k))_{k\in\N}$ monoton fallend und aufgrund der Beschränktheit von $f$ auch konvergent.
 Von \eqref{doublestar} ausgehend, erhalten wir zudem für $k\in\mathbb{N}$
 \begin{displaymath}
  c_3\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2 \leq f(x^k)-f(x^{k+1}) \overset{k\to\infty}{\to} 0.
 \end{displaymath}
 Setzen wir nun \eqref{star} ein, so ergibt sich
-\begin{displaymath}
- c_3\Vert\nabla f(x^k)\Vert^2 (\min\{c_1,c_2\Vert \nabla f(x^k)\Vert^p\})^2\leq c_3\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2 \leq f(x^k)-f(x^{k+1}) \overset{k\to\infty}{\to} 0.
-\end{displaymath}
+\begin{align*}
+ c_3\Vert\nabla f(x^k)\Vert^2 (\min\{c_1,c_2\Vert \nabla f(x^k)\Vert^p\})^2 &\leq c_3\left(\frac{\langle\nabla f(x^k),d(x^k)\rangle}{\Vert d(x^k)\Vert}\right)^2 \\
+ &\leq f(x^k)-f(x^{k+1}) \overset{k\to\infty}{\to} 0.
+\end{align*}
 Damit gilt $c_3c_1^2\Vert\nabla f(x^k)\Vert^2\to 0$ oder $c_3c_2^2\Vert\nabla f(x^k)\Vert^{2+2p}\to 0$ für $k\to\infty$,
 was genau dann erfüllt ist, falls $(\nabla f(x^k))_k$ gegen Null konvergiert.
 \\\\
 Aus der Koerzivität und der Stetigkeit von $f$ folgt, dass die Niveaumenge $N(f,f(x_0))$ kompakt ist.
-Damit hat die jede Teilfolge der Folge $(x^k)_k$ eine konvergente Teilfolge $(x^{k_{l_m}})_m$, deren Grenzwert wir mit $\tilde x_l\in\R^n$
-bezeichnen wollen. Mit der Stetigkeit der Ableitung von $f$ folgt 
+Damit hat die jede Teilfolge der Folge $(x^k)_{k\in\N}$ eine konvergente Teilfolge $(x^{k_{l_m}})_{m\in\N}$, deren Grenzwert wir mit $\tilde x_l\in\R^n$
+bezeichnen wollen. Mit der Stetigkeit der Ableitung von $f$ folgt
 \begin{displaymath}
  \nabla f(\tilde x_l)=\lim_{m\to\infty}\nabla f(x^{k_{l_m}})=0.
 \end{displaymath}
