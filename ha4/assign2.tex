@@ -1,3 +1,62 @@
 \assignment{4.2}
 
-
+Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
+\\
+\begin{compactenum}[(i)]
+ \item Wir zeigen, dass $K^*$ abgschlossen ist. Sei dazu $(x_n)_n\subset K^*$ eine in $\R^d$ konvergente
+ Folge mit Grezwert $x\in\R^d$. Sei $y\in K$ beliebig. Nach Definition des Dualkegels gilt 
+ \begin{displaymath}
+  \langle x_n,y\rangle\leq 0
+ \end{displaymath}
+ und mit der Stetigkeit der dualen Paarung folgt
+ \begin{displaymath}
+  \langle x, y\rangle =\lim_{n\to\infty}\langle x_n,y\rangle\leq 0.
+ \end{displaymath} 
+ Weil $y$ beliebig war, ist $x\in K^*$.
+ \\
+ \item Wir zeigen, dass $K$ genau dann abgeschlossen ist, wenn $K=K^{**}$ ist.
+ \begin{compactenum}
+ \item[$\Leftarrow$] Wegen $K^{**}=(K^*)^*$ folgt mit (i) die Abgeschlossenheit von $K^{**}=K$.
+ \item[$\Rightarrow$] Für jeden Kegel gilt $K\subset K^{**}$, denn ist $x\in K$ beliebig,
+ so gilt für alle $s\in K^*$
+ \begin{displaymath}
+    \langle x,s\rangle\leq 0,
+ \end{displaymath}
+ d.h. $x\in K^{**}$. Bleibt noch die zweite Inklusion $K\supset K^{**}$ zu zeigen.
+ \\
+ \end{compactenum}
+ \item  Es sei $f\in K^*$ und es gelte $\langle f, x_0\rangle\leq 0$ für einen einen inneren Punkt $x_0\in K$.
+ Wir zeigen mittels Widerspruchsbeweis, dass $f=0$ ist. Sei also $f\neq0$. Da $x_0$ ein innerer Punkt von $K$ 
+ ist, gibt es ein $\varepsilon>0$ mit $U_\varepsilon(x_0)\subset K$. Damit ist insbesondere 
+ $x_0+\frac{\varepsilon}{\Vert f \Vert} f\in K$ und es gilt
+ \begin{displaymath}
+  0\geq \langle f,x_0+\frac{\varepsilon}{\Vert f \Vert} f\rangle
+  = \langle f,x_0\rangle+\langle f,\frac{\varepsilon}{\Vert f \Vert} f\rangle
+  =0+\varepsilon \Vert f\Vert.
+ \end{displaymath}
+ Dies kann aber nur gelten, wenn $\Vert f\Vert=0$ ist, was im Widerspruch zur Annahme $f\neq 0$ steht.
+ \\
+ \item Diese Aussage ist falsch. Dazu betrachten wir für $d=2$ den Kegel
+ \begin{displaymath}
+  K\coloneqq\left\{\begin{pmatrix}x_1\\x_2\end{pmatrix}: 0< x_1 \land 0< x_2 \right\}\cup\{0\}
+ \end{displaymath}
+  und
+  \begin{displaymath}
+  K^*=\left\{\begin{pmatrix}s_1\\s_2\end{pmatrix}: 0\geq s_1 \land 0\geq s_2 \right\}.
+ \end{displaymath}
+ Dass $K$ und $K^*$ Kegel sind, ist offensichtlich. Außerdem gilt für jedes $s\in K^*$
+ \begin{displaymath}
+  \langle s,x\rangle =s_1x_1+s_2x_2\leq 0
+ \end{displaymath}
+ für alle $x\in K$. Andererseits ist für $y\in \R^2\backslash K^*$ entweder $y_1>0$ oder $y_2>0$;
+ sei o.B.d.A. $y_1>0$. Dann gilt für $x\coloneqq(y_1+|y_2|,\frac{y_1}{2})^T\in K$
+ \begin{displaymath}
+  \langle x, y\rangle \geq y_1^2+\frac{|y_2|y_1}{2}>0.
+ \end{displaymath}
+ Damit ist gezeigt, dass $K^*$ tatsächlich der Dualkegel von $K$ ist. Offensichtlich ist der 
+ erste Einheitsvektor nicht in $K$ enthalten, dennoch gilt
+  \begin{displaymath}
+  \langle e_1, s\rangle \leq 0
+ \end{displaymath}
+ für alle $s\in K^*$.
+\end{compactenum}
