@@ -4,7 +4,7 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
 \\
 \begin{compactenum}[(i)]
  \item Wir zeigen, dass $K^*$ abgschlossen ist. Sei dazu $(x_n)_n\subset K^*$ eine in $\R^d$ konvergente
- Folge mit Grezwert $x\in\R^d$. Sei $y\in K$ beliebig. Nach Definition des Dualkegels gilt 
+ Folge mit Grenzwert $x\in\R^d$. Sei $y\in K$ beliebig. Nach Definition des Dualkegels gilt 
  \begin{displaymath}
   \langle x_n,y\rangle\leq 0
  \end{displaymath}
@@ -22,7 +22,25 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
  \begin{displaymath}
     \langle x,s\rangle\leq 0,
  \end{displaymath}
- d.h. $x\in K^{**}$. Bleibt noch die zweite Inklusion $K\supset K^{**}$ zu zeigen.
+ d.h. $x\in K^{**}$. Bleibt noch die zweite Inklusion $K\supset K^{**}$ zu zeigen. Angenommen, es gäbe
+ $y\in K^{**}\backslash\{K\}$. Nach dem Trennungssatz gibt es ein $s\in \R^d$ mit 
+ \begin{displaymath}
+  \langle s, y-x\rangle > 0
+ \end{displaymath}
+ für alle $x\in K$. Isbesondere ist also
+ \begin{displaymath}
+  \langle s,y\rangle >0.
+ \end{displaymath}
+ Für $\lambda>0$ und $x\in K$ gilt 
+ \begin{displaymath}
+  0<\langle s, y-\lambda x\rangle=\langle s, y\rangle-\lambda\langle s, x\rangle.
+ \end{displaymath}
+ Weil $\lambda$ beliebig war, folgt $\langle s, x\rangle\leq 0$ für alle $x\in K$. 
+ Damit ist $s\in K^*$. Dann müsste aber auch
+ \begin{displaymath}
+  \langle s,y\rangle \leq 0
+ \end{displaymath}
+ sein, was uns den ersehnten Widerspruch liefert. Folglich ist $K\supset K^{**}$.
  \\
  \end{compactenum}
  \item  Es sei $f\in K^*$ und es gelte $\langle f, x_0\rangle\leq 0$ für einen einen inneren Punkt $x_0\in K$.
