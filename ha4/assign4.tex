@@ -1,5 +1,6 @@
 \assignment{4.4}
 \newcommand{\e}{\varepsilon}
+\newcommand{\M}{\partial{M}}
 
 Bevor wir die gestellten Aufgaben l"osen, beweisen wir den folgenden Hilfssatz.\\
 
@@ -36,7 +37,8 @@ der Allgemeinheit $\e = 1$ annehmen.\\
 
 Ist nun ein $x\in\R^n$ vorgegeben, dann gibt es einen Unterraum $E_x$ mit $\dim(E)=2$
 sodass $x \in E_x$ und trivialerweise auch $x_0 \in E$ gilt. Da $E_x$ isomorph zu $\R^2$
-ist, folgt aus dem eingangs bewiesenen Lemma $K(C,0)\cap E_x = E_x$. Da $x$ beliebig
+ist und wir $E_x \cap \overline{U_\e (0)}$ mit $S$ identifizieren k"onnen,
+folgt aus dem eingangs bewiesenen Lemma $K(C,0)\cap E_x = E_x$. Da $x$ beliebig
 gew"ahlt war, gilt folglich
 \[
 K(C,0) = \bigcup_{x\in\R^n} E_x = \R^n.
@@ -49,4 +51,80 @@ Normalenrichtung $s\in\R^n\setminus\{0\}$ existieren, die f"ur alle $y\in C$ die
 erf"ullt. Wegen $C = \R^n$ muss diese Bedinungen insbesondere f"ur $y = s$ erf"ullt
 sein. Das ist aber der positiven Definitheit von Skalarprodukten wegen nicht m"oglich.
 Es gilt n"amlich $\langle s,s \rangle > 0$.
+
+\item[(ii)] Es sei $H^+ := \{(x_1, x_2)^T \in\R^2 \mid x_2 > 0\}$ die offene obere Halbebene
+des $\R^2$. Wir werden die Mengengleichheit $K(M,0) = H^+$ beweisen.
+\begin{proof}
+Zun"achst bemerken wir, dass $K(H^+, 0) = H^+$ gilt. W"are dem nicht so, dann
+lie"se sich ein $y = (y_1, y_2)^T \in \R^2$ mit $y_2 \le 0$ und $y\in K(H^+,0)$
+finden. Wegen $K(H^+,0) = \{(\alpha x_1, \alpha x_2)^T \in \R^2 \mid \alpha > 0, x_2 > 0\}$ kann aber
+so ein $y$ nicht existieren. Wegen $M\subseteq H^+$ folgt dann unmittelbar
+$K(M, 0) \subseteq K(H^+, 0) = H^+$.\\
+
+Nun zur anderen Mengeninklusion: Betrachten wir zun"achst den Rand $\M$
+von $M$. Dann ist die eindeutig bestimmte Tangente von $\M$ an $x_0$ durch den
+Unterraum $\text{Span}{(1,0)^T}$ gegeben. Ist nun ein $x=(x_1, x_2)\in H^+$ gegeben,
+dann folgt aus $x_2 > 0$ f"ur den Winkel $\measuredangle((1,0),x)$ zwischen $x$
+und dem ersten Einheitsvektor
+\[
+\measuredangle((1,0),x) \in ]0,\pi[.
+\]
+Demnach
+muss die Verbindungsstrecke $\overline {x_0 x}$ oberhalb der Tangente liegen.
+Da nun aber $x_0 \in \M$ gilt, hat $\overline {x_0 x}$ zwei Schnittpunkte mit $\M$. Es gibt
+daher ein von $x_0$ und $x$ verschiedenes Element $y \in \overline {x_0 x}$ mit
+$y\in M$. Wegen
+\[
+x = \frac{\|x\|}{\|y\|}\cdot(y - 0)
+\]
+folgt somit aus $x\in K(H^+,0)$ die gew"unschte Gleichheit.
+\end{proof}
+
+Zum Abschluss zeigen wir noch die Mengengleichheit
+\[
+N':= \{(0,x_2) \in \R^2 \mid x_2 \le 0\} = N(M,0).
+\]
+Sei daf"ur zun"achst ein $s = (0,s_2) \in N'$ gegeben. Dann gilt f"ur alle
+$y = (y_1, y_2) \in H^+$ die Identit"at
+$
+\langle s,y-0 \rangle = s_2 y_2
+$.
+Wegen $s_2 \le 0$ und $y_2 > 0$, folgt $s_2 y_2 \le 0$ und damit $s \in N(M,0)$.\\
+
+Sei nun $s=(s_1, s_2) \in N(M,0)$. Dann gilt nach Definition f"ur alle $y = (y_1, y_2)\in M$
+\begin{equation}\label{blabla}
+\langle s,y-0 \rangle = s_1 y_1 + s_2 y_2 \le 0.
+\end{equation}
+%Ist $y = (y_1,0)$ f"ur ein $y_1 \in \R$, so folgt $s_1 y_1 + s_2 y_2= s_1 y_1$. Um \eqref{blabla}
+%f"ur alle $y_1 \in \R$ erf"ullen zu k"onnen, folgt daher $s_1 = 0$. Andernfalls
+%ist mit $y_1 = s_1$ stets $s_1 y_1 > 0$.
+Ist $y = (0, y_2)$ f"ur ein $y_2 \in \R$, so folgt mit \eqref{blabla}
+gerade $s_1 y_1 + s_2 y_2= s_2 y_2$. Wegen $y_2 > 0$ kann die geforderte Ungleichung
+nur im Falle $s_2 \le 0$ erf"ullt werden. Ist $s_1 \neq 0$, dann folgt mit $y=(-s_2/s_1 + 1, 1)$
+\[
+s_1 y_1 + s_2 y_2 = 1 > 0.
+\]
+Demnach muss $s_1 = 0$ gelten. Damit folgt dann endlich $N(M,0)= N'$. \hfill $\Box$
+
+\item[(iii)] Es sei $f\colon\R^3 \to \R, f(x) = x_1^2 + x_2^2 + x_3^2$ und
+$g\colon\R^3 \to \R, g(x) = x_1 + x_2 + x_3 - 6$. Dann ist die Lagrange-Funktion
+f"ur das in der Aufgabe gestellte Minimierungsproblem durch
+\[
+L(x, \lambda) = f(x) + \lambda g(x)
+\]
+gegeben. Wir untersuchen die notwendige Optimalit"atsbedingung
+\[
+\begin{pmatrix} \nabla_x L(x, \lambda) \\ \nabla_\lambda L(x, \lambda)\end{pmatrix}
+= \begin{pmatrix}
+x_1 + x_2 + x_3 + 3\lambda \\ x_1 + x_2 + x_3 - 6 \end{pmatrix}
+\overset{!}{=}\begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\]
+Man sieht sofort, dass $\lambda = -2$ gelten muss. Die Erf"ullung der Optimalit"atsbedingung
+ist damit "aquivalent zur Existenz einer L"osung des linearen Gleichungssystems
+\[
+\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1\end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
+= \begin{pmatrix} 2 \\ 6 \end{pmatrix}.
+\]
+Da dieses System keine L"osung besitzt, ist die notwendige Optimalit"atsbedingung verletzt
+und das Problem kann nicht gel"ost werden.
 \end{itemize}
