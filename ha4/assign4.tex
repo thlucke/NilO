@@ -1,2 +1,52 @@
 \assignment{4.4}
+\newcommand{\e}{\varepsilon}
 
+Bevor wir die gestellten Aufgaben l"osen, beweisen wir den folgenden Hilfssatz.\\
+
+\textbf{Lemma.} Ist $S:=\{x\in\R^2 \mid \|x\|_2 \le 1\}$, so gilt $K(S,0)=\R^2$.
+
+\begin{proof}
+Sei $x\in\R^2$ vorgegeben. Dann k"onnen wir dieses $x$ durch die Wahl eines
+geeigneten $\varphi_x \in [0,2\pi[$ in Polarkoordinaten wie folgt darstellen:
+\[
+x = \|x\|_2 \cdot (\cos(\varphi_x), \sin(\varphi_x)).
+\]
+Setzen wir $\widetilde{x} := (\cos(\varphi_x), \sin(\varphi_x))$, so ist $\|\widetilde{x}\|_2 = 1$
+und damit $\widetilde{x} \in S$. Nach Konstruktion folgt dann aus
+\[
+x = \|x\|_2\cdot(\widetilde{x}-0) \in K(S,0)
+\]
+die Behauptung.
+\end{proof}
+
+Nun widmen wir uns den gestellten Aufgaben. Dabei "ubernehmen wir jeweils die
+gegebenen Voraussetzungen und Notationen.
+
+\begin{itemize}
+\item [(i)]
+Da die Eigenschaft der Konvexit"at translationsinvariant
+ist, k"onnen wir ohne Einschr"ankung annehmen, dass $x_0 = 0$ gilt. Da $x_0$
+nach Voraussetzung ein innerer Punkt von $C$ ist, muss ein $\e > 0$ existieren,
+mit
+\[
+\overline{U_\e (0)} \subseteq C.
+\]
+Da Konvexit"at auch unter Skalierung invariant bleibt, k"onnen wir ohne Beschr"ankung
+der Allgemeinheit $\e = 1$ annehmen.\\
+
+Ist nun ein $x\in\R^n$ vorgegeben, dann gibt es einen Unterraum $E_x$ mit $\dim(E)=2$
+sodass $x \in E_x$ und trivialerweise auch $x_0 \in E$ gilt. Da $E_x$ isomorph zu $\R^2$
+ist, folgt aus dem eingangs bewiesenen Lemma $K(C,0)\cap E_x = E_x$. Da $x$ beliebig
+gew"ahlt war, gilt folglich
+\[
+K(C,0) = \bigcup_{x\in\R^n} E_x = \R^n.
+\]
+Des Weiteren gilt $N(C,0) = \{0\}$. W"are dies nicht der Fall, so m"usste eine
+Normalenrichtung $s\in\R^n\setminus\{0\}$ existieren, die f"ur alle $y\in C$ die Absch"atzung
+\[
+\langle s, y \rangle \le 0
+\]
+erf"ullt. Wegen $C = \R^n$ muss diese Bedinungen insbesondere f"ur $y = s$ erf"ullt
+sein. Das ist aber der positiven Definitheit von Skalarprodukten wegen nicht m"oglich.
+Es gilt n"amlich $\langle s,s \rangle > 0$.
+\end{itemize}
