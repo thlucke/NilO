@@ -46,11 +46,11 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
  \item  Es sei $f\in K^*$ und es gelte $\langle f, x_0\rangle\leq 0$ für einen einen inneren Punkt $x_0\in K$.
  Wir zeigen mittels Widerspruchsbeweis, dass $f=0$ ist. Sei also $f\neq0$. Da $x_0$ ein innerer Punkt von $K$ 
  ist, gibt es ein $\varepsilon>0$ mit $U_\varepsilon(x_0)\subset K$. Damit ist insbesondere 
- $x_0+\frac{\varepsilon}{\Vert f \Vert} f\in K$ und es gilt
+ $x_0+\frac{\varepsilon}{2\Vert f \Vert} f\in K$ und es gilt
  \begin{displaymath}
-  0\geq \langle f,x_0+\frac{\varepsilon}{\Vert f \Vert} f\rangle
-  = \langle f,x_0\rangle+\langle f,\frac{\varepsilon}{\Vert f \Vert} f\rangle
-  =0+\varepsilon \Vert f\Vert.
+  0\geq \langle f,x_0+\frac{\varepsilon}{2\Vert f \Vert} f\rangle
+  = \langle f,x_0\rangle+\langle f,\frac{2\varepsilon}{\Vert f \Vert} f\rangle
+  =0+\frac{\varepsilon}{2} \Vert f\Vert.
  \end{displaymath}
  Dies kann aber nur gelten, wenn $\Vert f\Vert=0$ ist, was im Widerspruch zur Annahme $f\neq 0$ steht.
  \\
