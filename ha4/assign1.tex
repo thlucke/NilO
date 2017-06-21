@@ -1,3 +1,28 @@
 \assignment{4.1}
 
-
+Sei $x^0, b\in\mathbb R^n$ und $A\in\mathbb R^{n\times n}$ positiv definit und symmetrisch. Außerdem seien $g_k$ die im CG-Verfahren zur Lösung des Gleichungssystems $Ax=b$ bei Start in $x^0$ berechneten Gradienten. Dann ist die Folge $(\|g_k\|_{A^{-1}})_{k=1}^N=\left(\sqrt{g_k^TA^{-1}g_k}\right)_{k=1}^N$ monoton fallend.
+  
+\begin{proof}
+Für alle $k\in\mathbb N$ gilt 
+\begin{align}g_{k+1}=g_k+\sigma_kAd_k\end{align}
+mit
+\begin{align}d_k=-g_k+\frac{\|g_k\|^2}{\|g_{k-1}\|^2}d_{k-1}=-g_k+\frac{g_k^Tg_k}{g_{k-1}^Tg_{k-1}}d_{k-1}\end{align}
+und
+\begin{align}\sigma_k=\frac{\|g_k\|^2}{\langle d_k, Ad_k\rangle}=\frac{g_k^Tg_k}{d_k^TAd_k}\end{align}
+Wegen der Symmetrie von A gilt $A=A^T$. Wegen der positiven Definitheit von A gilt $x^TAx\geq 0$ für alle $x\in \mathbb R^n$. Außerdem wird in der folgenden Rechnung die Aussage $\langle g_k,d_{k-1}\rangle=g_k^Td_{k-1}=0$ aus Lemma 4.8.2 genutzt. Mit diesen Hilfsmitteln folgt
+\begin{align*}
+\|g_{k+1}\|_{A^{-1}}&=\sqrt{g_{k+1}^TA^{-1}g_{k+1}}\\
+&\overset{\text{(1)}}=\sqrt{(g_k+\sigma_kAd_k)^TA^{-1}(g_k+\sigma_kAd_k)}\\
+&=\sqrt{g_k^TA^{-1}g_k+g_k^TA^{-1}\sigma_kAd_k+(\sigma_kAd_k)^TA^{-1}g_k+(\sigma_kAd_k)^TA^{-1}\sigma_kAd_k}\\
+&=\sqrt{g_k^TA^{-1}g_k+g_k^TA^{-1}\sigma_kAd_k+d_k^TA^T\sigma_kA^{-1}g_k+d_k^TA^T\sigma_kA^{-1}\sigma_kAd_k}\\
+&\overset{A=A^T}=\sqrt{g_k^TA^{-1}g_k+g_k^TA^{-1}\sigma_kAd_k+d_k^TA\sigma_kA^{-1}g_k+d_k^TA\sigma_kA^{-1}\sigma_kAd_k}\\
+&=\sqrt{g_k^TA^{-1}g_k+2\sigma_kg_k^Td_k+\sigma_k^2d_k^TAd_k}\\
+&\overset{\text{(2)}}=\sqrt{g_k^TA^{-1}g_k-2\sigma_kg_k^Tg_k+2\sigma_kg_k^T\frac{g_k^Tg_k}{g_{k-1}^Tg_{k-1}}d_{k-1}+\sigma_k^2d_k^TAd_k}\\
+&\overset{g_k^Td_{k-1}=0}=\sqrt{g_k^TA^{-1}g_k-2\sigma_kg_k^Tg_k+\sigma_k^2d_k^TAd_k}\\
+&\overset{\text{(3)}}=\sqrt{g_k^TA^{-1}g_k-2\frac{g_k^Tg_k}{d_k^TAd_k}g_k^Tg_k+\frac{(g_k^Tg_k)^2}{(d_k^TAd_k)^2}d_k^TAd_k}\\
+&=\sqrt{g_k^TA^{-1}g_k-\frac{(g_k^Tg_k)^2}{d_k^TAd_k}}\\
+&\overset{d_k^TAd_k\geq 0}\leq \sqrt{g_k^TA^{-1}g_k}\\
+&=\|g_k\|_{A^{-1}}
+\end{align*}
+Also ist $(\|g_k\|_{A^{-1}})_{k=1}^N=\left(\sqrt{g_k^TA^{-1}g_k}\right)_{k=1}^N$ monoton fallend.
+\end{proof}
