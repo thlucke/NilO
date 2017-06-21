@@ -1,2 +1,37 @@
 \assignment{4.3}
 
+Es sei $C\in\R^d$ eine nichtleere, konvexe und abgeschlossene Menge. Für einen Punkt $x_0\in\R^d$ definieren wir
+\begin{displaymath}
+ f\colon \R^d\to\R,\, f(x)=\frac{1}{2}\Vert x-x_0\Vert^2
+\end{displaymath}
+und
+\begin{displaymath}
+ P_C(x_0)\coloneqq \arg\min_{x\in C}f(x)=\arg\min_{x\in C}\Vert x-x_0\Vert.
+\end{displaymath}
+\begin{compactenum}[(i)]
+ \item Seien $x,x_0\in \R^d$. Da $f$ strikt konvex ist, ist die Lösung des Problems eindeutig.
+ Und es gilt genau dann $p(x_0)=x$, wenn $x$ die Variationsungleichung
+ \begin{displaymath}
+  0\leq \langle \nabla f(x),y-x\rangle=\langle x-x_0,y-x\rangle \quad\text{ für alle }y\in C
+ \end{displaymath} erfüllt.
+ Dies ist äquivalent zu
+ \begin{displaymath}
+  0\geq \langle x_0-x,y-x\rangle \quad\text{ für alle }y\in C,
+ \end{displaymath}
+ mit anderen Worten $x_0-x\in N(C,x)$.
+ \\
+ \item Wir untersuchen
+ \begin{displaymath}
+  \Vert P_C(x_0)-x_0\Vert=\Vert (\arg\min_{x\in C}\Vert x-x_0\Vert)-x_0\Vert =\min_{x\in C}\Vert x-x_0\Vert,
+ \end{displaymath}
+ was gerade dem \textsc{Hausdorff}-Abstand $d(x_0,C)$ zwischen $x_0$ und $C$ entspricht.
+%  Wir wissen bereits, dass $D$ stetig ist. 
+ Weiter betrachten wir für $x_1\in \R^d$
+ \begin{align*}
+  &\Vert P_C(x_1)-P_C(x_0)\Vert&=&\Vert (P_C(x_1)-x_1)-(P_C(x_0)-x_0)+(x_1-x_0)\Vert\\
+  &&\leq& \Vert (P_C(x_1)-x_1)-(P_C(x_0)-x_0)\Vert+\Vert x_1-x_0\Vert
+ \end{align*}
+
+\end{compactenum}
+
+
