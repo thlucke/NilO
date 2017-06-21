@@ -106,7 +106,7 @@ s_1 y_1 + s_2 y_2 = 1 > 0.
 \]
 Demnach muss $s_1 = 0$ gelten. Damit folgt dann endlich $N(M,0)= N'$. \hfill $\Box$
 
-\item[(iii)] Es sei $f\colon\R^3 \to \R, f(x) = x_1^2 + x_2^2 + x_3^2$ und
+\item[(iii)] Es sei $f\colon\R^3 \to \R, f(x) =\frac{1}{2} (x_1^2 + x_2^2 + x_3^2)$ und
 $g\colon\R^3 \to \R, g(x) = x_1 + x_2 + x_3 - 6$. Dann ist die Lagrange-Funktion
 f"ur das in der Aufgabe gestellte Minimierungsproblem durch
 \[
@@ -116,15 +116,23 @@ gegeben. Wir untersuchen die notwendige Optimalit"atsbedingung
 \[
 \begin{pmatrix} \nabla_x L(x, \lambda) \\ \nabla_\lambda L(x, \lambda)\end{pmatrix}
 = \begin{pmatrix}
-x_1 + x_2 + x_3 + 3\lambda \\ x_1 + x_2 + x_3 - 6 \end{pmatrix}
-\overset{!}{=}\begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+x_1+\lambda\\x_2+\lambda\\x_3+\lambda \\ x_1 + x_2 + x_3 - 6 \end{pmatrix}
+\overset{!}{=}\begin{pmatrix} 0 \\ 0\\0\\0 \end{pmatrix}.
 \]
-Man sieht sofort, dass $\lambda = -2$ gelten muss. Die Erf"ullung der Optimalit"atsbedingung
+Die Erf"ullung der Optimalit"atsbedingung
 ist damit "aquivalent zur Existenz einer L"osung des linearen Gleichungssystems
 \[
-\begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1\end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
-= \begin{pmatrix} 2 \\ 6 \end{pmatrix}.
+\begin{pmatrix} 
+1 & 0 & 0 &1 \\ 
+0 & 1 & 0 &1 \\
+0 & 0 & 1 &1\\
+1 & 1 & 1 & 0
+\end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\\lambda\end{pmatrix}
+= \begin{pmatrix} 0\\0\\0 \\ 6 \end{pmatrix}.
 \]
-Da dieses System keine L"osung besitzt, ist die notwendige Optimalit"atsbedingung verletzt
-und das Problem kann nicht gel"ost werden.
+Dieses System besitzt die eindeutige Lösung
+\[\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\\lambda\end{pmatrix}
+=\begin{pmatrix} 2 \\ 2 \\ 2 \\-2\end{pmatrix},
+\]
+d.h. bei $x=(2,2,2)^T$ wird das Minimum von $f(x)=\sqrt{3}$ angenommen.
 \end{itemize}
