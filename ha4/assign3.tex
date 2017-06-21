@@ -20,18 +20,29 @@ und
  \end{displaymath}
  mit anderen Worten $x_0-x\in N(C,x)$.
  \\
- \item Wir untersuchen
+ \item Sei zusätzlich $x_1\in \R^d$. Wegen $P_C(x_0),P_C(x_1)\in C$ haben wir mit Aufgabenteil (ii)
  \begin{displaymath}
-  \Vert P_C(x_0)-x_0\Vert=\Vert (\arg\min_{x\in C}\Vert x-x_0\Vert)-x_0\Vert =\min_{x\in C}\Vert x-x_0\Vert,
+    0\geq \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle 
  \end{displaymath}
- was gerade dem \textsc{Hausdorff}-Abstand $d(x_0,C)$ zwischen $x_0$ und $C$ entspricht.
-%  Wir wissen bereits, dass $D$ stetig ist. 
- Weiter betrachten wir für $x_1\in \R^d$
+ und
+  \begin{displaymath}
+    0\geq \langle x_1-P_C(x_1),P_C(x_0)-P_C(x_1)\rangle.
+ \end{displaymath}
+ Durch Addition ergibt sich
  \begin{align*}
-  &\Vert P_C(x_1)-P_C(x_0)\Vert&=&\Vert (P_C(x_1)-x_1)-(P_C(x_0)-x_0)+(x_1-x_0)\Vert\\
-  &&\leq& \Vert (P_C(x_1)-x_1)-(P_C(x_0)-x_0)\Vert+\Vert x_1-x_0\Vert
+ & 0&\geq& \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle +\langle x_1-P_C(x_1),P_C(x_0)-P_C(x_1)\rangle \\
+ &&=& \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle +\langle P_C(x_1)-x_1,P_C(x_1)-P_C(x_0)\rangle \\
+ &&=&\langle P_C(x_1)-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle+\langle x_0-x_1,P_C(x_1)-P_C(x_0)\rangle.
  \end{align*}
-
+ Somit ist mit \textsc{Cauchy-Schwarz}
+ \begin{displaymath}
+  \Vert P_C(x_1)-P_C(x_0)\Vert^2 \leq \langle x_1-x_0,P_C(x_1)-P_C(x_0)\rangle\leq \Vert x_1-x_0\Vert \Vert P_C(x_1)-P_C(x_0)\Vert
+ \end{displaymath}
+ und damit insbesondere
+ \begin{displaymath}
+  \Vert P_C(x_1)-P_C(x_0)\Vert\leq \Vert x_1-x_0\Vert,
+ \end{displaymath}
+ was gerade die Stetigkeit von $P_C$ bedeutet.
 \end{compactenum}
 
 
