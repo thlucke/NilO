@@ -3,8 +3,7 @@
 Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
 \\
 \begin{compactenum}[(i)]
- \item Wir zeigen, dass $K^*$ abgschlossen ist. Sei dazu $(x_n)_n\subset K^*$ eine in $\R^d$ konvergente
- Folge mit Grenzwert $x\in\R^d$. Sei $y\in K$ beliebig. Nach Definition des Dualkegels gilt 
+ \item Wir zeigen, dass $K^*$ abgeschlossen ist. Sei dazu $(x_n)_{n\in\mathbb N}\subset K^*$ eine in $\R^d$ konvergente Folge mit Grenzwert $x\in\R^d$. Sei $y\in K$ beliebig. Nach Definition des Dualkegels gilt 
  \begin{displaymath}
   \langle x_n,y\rangle\leq 0
  \end{displaymath}
@@ -22,8 +21,9 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
  \begin{displaymath}
     \langle x,s\rangle\leq 0,
  \end{displaymath}
- d.h. $x\in K^{**}$. Bleibt noch die zweite Inklusion $K\supset K^{**}$ zu zeigen. Angenommen, es gäbe
- $y\in K^{**}\backslash\{K\}$. Nach dem Trennungssatz gibt es ein $s\in \R^d$ mit 
+ d.h. $x\in K^{**}$.\\\\
+Es bleibt noch die zweite Inklusion $K\supset K^{**}$ zu zeigen. Angenommen, es gäbe
+ $y\in K^{**}\backslash K$. Nach dem Trennungssatz gibt es ein $s\in \R^d$ mit 
  \begin{displaymath}
   \langle s, y-x\rangle > 0
  \end{displaymath}
@@ -31,7 +31,7 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
  \begin{displaymath}
   \langle s,y\rangle >0.
  \end{displaymath}
- Für $\lambda>0$ und $x\in K$ gilt 
+Für beliebige $\lambda>0$ und $x\in K$ ist auch $\lambda x\in K$ und es gilt 
  \begin{displaymath}
   0<\langle s, y-\lambda x\rangle=\langle s, y\rangle-\lambda\langle s, x\rangle.
  \end{displaymath}
@@ -43,38 +43,35 @@ Es sei $K\subset \R^d$ ein konvexer Kegel mit $0\in K$.
  sein, was uns den ersehnten Widerspruch liefert. Folglich ist $K\supset K^{**}$.
  \\
  \end{compactenum}
- \item  Es sei $f\in K^*$ und es gelte $\langle f, x_0\rangle\leq 0$ für einen einen inneren Punkt $x_0\in K$.
- Wir zeigen mittels Widerspruchsbeweis, dass $f=0$ ist. Sei also $f\neq0$. Da $x_0$ ein innerer Punkt von $K$ 
+ \item  Es sei $f\in K^*$ und es gelte $\langle f, x_0\rangle\leq 0$ für einen inneren Punkt $x_0\in K$. Wir zeigen mittels Widerspruchsbeweis, dass $f=0$ ist. Sei also $f\neq0$. Da $x_0$ ein innerer Punkt von $K$ 
  ist, gibt es ein $\varepsilon>0$ mit $U_\varepsilon(x_0)\subset K$. Damit ist insbesondere 
  $x_0+\frac{\varepsilon}{2\Vert f \Vert} f\in K$ und es gilt
  \begin{displaymath}
   0\geq \langle f,x_0+\frac{\varepsilon}{2\Vert f \Vert} f\rangle
-  = \langle f,x_0\rangle+\langle f,\frac{2\varepsilon}{\Vert f \Vert} f\rangle
-  =0+\frac{\varepsilon}{2} \Vert f\Vert.
+  = \langle f,x_0\rangle+\langle f,\frac{\varepsilon}{2\Vert f \Vert} f\rangle
+  =0+\frac{\varepsilon}{2} \frac{\Vert f\Vert^2}{\Vert f\Vert}=\frac{\varepsilon}{2} \Vert f\Vert.
  \end{displaymath}
- Dies kann aber nur gelten, wenn $\Vert f\Vert=0$ ist, was im Widerspruch zur Annahme $f\neq 0$ steht.
- \\
+Wegen $\Vert f\Vert\geq 0$ folgt $0\geq \frac{\varepsilon}{2} \Vert f\Vert\geq 0$, im Widerspruch zur Annahme $f\neq 0$. \\
  \item Diese Aussage ist falsch. Dazu betrachten wir für $d=2$ den Kegel
  \begin{displaymath}
-  K\coloneqq\left\{\begin{pmatrix}x_1\\x_2\end{pmatrix}: 0< x_1 \land 0< x_2 \right\}\cup\{0\}
+  K\coloneqq\left\{\begin{pmatrix}x_1\\x_2\end{pmatrix}\in\mathbb R^2: x_1>0 \land x_2>0 \right\}\cup\{0\}
  \end{displaymath}
   und
   \begin{displaymath}
-  K^*=\left\{\begin{pmatrix}s_1\\s_2\end{pmatrix}: 0\geq s_1 \land 0\geq s_2 \right\}.
+  K^*=\left\{\begin{pmatrix}s_1\\s_2\end{pmatrix}\in\mathbb R^2: s_1\leq 0 \land s_2\leq 0 \right\}.
  \end{displaymath}
  Dass $K$ und $K^*$ Kegel sind, ist offensichtlich. Außerdem gilt für jedes $s\in K^*$
  \begin{displaymath}
   \langle s,x\rangle =s_1x_1+s_2x_2\leq 0
  \end{displaymath}
- für alle $x\in K$. Andererseits ist für $y\in \R^2\backslash K^*$ entweder $y_1>0$ oder $y_2>0$;
- sei o.B.d.A. $y_1>0$. Dann gilt für $x\coloneqq(y_1+|y_2|,\frac{y_1}{2})^T\in K$
+ für alle $x\in K$. Für $y\in \R^2\backslash K^*$ gilt hingegen $y_1>0$ oder $y_2>0$, o.B.d.A. $y_1>0$. Dann gilt für $x\coloneqq(y_1+|y_2|,\frac{y_1}{2})^T\in K$ die Ungleichung
  \begin{displaymath}
-  \langle x, y\rangle \geq y_1^2+\frac{|y_2|y_1}{2}>0.
+  \langle x, y\rangle=y_1^2+|y_2|y_1+\frac{y_1y_2}{2} \geq y_1^2+\frac{y_1|y_2|}{2}>0.
  \end{displaymath}
- Damit ist gezeigt, dass $K^*$ tatsächlich der Dualkegel von $K$ ist. Offensichtlich ist der 
- erste Einheitsvektor nicht in $K$ enthalten, dennoch gilt
+ Damit ist gezeigt, dass $K^*$ tatsächlich der Dualkegel von $K$ ist. \\\\
+Schließlich betrachten wir den ersten Einheitsvektor $e_1$. Für alle $s\in K^*$ gilt
   \begin{displaymath}
-  \langle e_1, s\rangle \leq 0
+  \langle e_1, s\rangle=s_1 \leq 0,
  \end{displaymath}
- für alle $s\in K^*$.
+aber $e_1$ ist nicht in $K$ enthalten.
 \end{compactenum}
