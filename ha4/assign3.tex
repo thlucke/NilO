@@ -2,15 +2,11 @@
 
 Es sei $C\in\R^d$ eine nichtleere, konvexe und abgeschlossene Menge. Für einen Punkt $x_0\in\R^d$ definieren wir
 \begin{displaymath}
- f\colon \R^d\to\R,\, f(x)=\frac{1}{2}\Vert x-x_0\Vert^2
+ f\colon \R^d\to\R,\, f(x)=\frac{1}{2}\Vert x-x_0\Vert^2.
 \end{displaymath}
-und
-\begin{displaymath}
- P_C(x_0)\coloneqq \arg\min_{x\in C}f(x)=\arg\min_{x\in C}\Vert x-x_0\Vert.
-\end{displaymath}
+Sei $P_C(x_0)$ die eindeutige Lösung von $\min\limits_{x\in C}\Vert x-x_0\Vert$. Wegen der Monotonie und der Bijektivität von $q: \mathbb R_{\geq 0}\to \mathbb R_{\geq 0}, x\mapsto \frac{1}{2}x^2$ ist $P_C(x_0)$ auch die eindeutige Lösung von $$\min_{x\in C}f(x)=\min_{x\in C}\frac{1}{2}\Vert x-x_0\Vert^2.$$
 \begin{compactenum}[(i)]
- \item Seien $x,x_0\in \R^d$. Da $f$ strikt konvex ist, ist die Lösung des Problems eindeutig.
- Und es gilt genau dann $p(x_0)=x$, wenn $x$ die Variationsungleichung
+ \item Seien $x,x_0\in \R^d$. Da $f$ strikt konvex ist, gilt genau dann $p(x_0)=x$, wenn $x$ die Variationsungleichung
  \begin{displaymath}
   0\leq \langle \nabla f(x),y-x\rangle=\langle x-x_0,y-x\rangle \quad\text{ für alle }y\in C
  \end{displaymath} erfüllt.
@@ -20,7 +16,7 @@ und
  \end{displaymath}
  mit anderen Worten $x_0-x\in N(C,x)$.
  \\
- \item Sei zusätzlich $x_1\in \R^d$. Wegen $P_C(x_0),P_C(x_1)\in C$ haben wir mit Aufgabenteil (ii)
+ \item Sei zusätzlich $x_1\in \R^d$. Wegen $P_C(x_0),P_C(x_1)\in C$ haben wir mit Aufgabenteil (i)
  \begin{displaymath}
     0\geq \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle 
  \end{displaymath}
@@ -32,17 +28,18 @@ und
  \begin{align*}
  & 0&\geq& \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle +\langle x_1-P_C(x_1),P_C(x_0)-P_C(x_1)\rangle \\
  &&=& \langle x_0-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle +\langle P_C(x_1)-x_1,P_C(x_1)-P_C(x_0)\rangle \\
- &&=&\langle P_C(x_1)-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle+\langle x_0-x_1,P_C(x_1)-P_C(x_0)\rangle.
+ &&=&\langle P_C(x_1)-P_C(x_0),P_C(x_1)-P_C(x_0)\rangle+\langle x_0-x_1,P_C(x_1)-P_C(x_0)\rangle\\
+&&=&\| P_C(x_1)-P_C(x_0)\|^2+\langle P_C(x_1)-P_C(x_0),x_0-x_1\rangle
  \end{align*}
- Somit ist mit \textsc{Cauchy-Schwarz}
+Daraus folgt mithilfe der Cauchy-Schwarz-Ungleichung
  \begin{displaymath}
   \Vert P_C(x_1)-P_C(x_0)\Vert^2 \leq \langle x_1-x_0,P_C(x_1)-P_C(x_0)\rangle\leq \Vert x_1-x_0\Vert \Vert P_C(x_1)-P_C(x_0)\Vert
  \end{displaymath}
- und damit insbesondere
+ und weiter
  \begin{displaymath}
   \Vert P_C(x_1)-P_C(x_0)\Vert\leq \Vert x_1-x_0\Vert,
  \end{displaymath}
- was gerade die Stetigkeit von $P_C$ bedeutet.
+ also die Lipschitz-Stetigkeit und schließlich die Stetigkeit von $P_C$.
 \end{compactenum}
 
 
