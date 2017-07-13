@@ -1,3 +1,13 @@
 \assignment{5.3}
 
-
+Seien $A: \mathbb R^n\to \mathbb R^n$ linear, $y_d\in\mathbb R^n$, $\gamma>0$ und $u_a,u_b\in\mathbb R^n$ mit $u_a<u_b$. Betrachte das endlichdimensionale Optimalsteuerungsproblem
+$$\begin{cases}\min J(y,u)=\frac{1}{2}\|Ay-y_d\|_2^2+\frac{\gamma}{2}\|u\|_2^2, (y,u)\in\mathbb R^n\times \mathbb R^n\\Ay=u\\u_a\leq u\leq u_b\end{cases}$$
+\begin{compactenum}[(i)]
+\item Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem sind\\\\
+\item Seien $\alpha,\beta\in\mathbb R$ mit $\alpha\leq\beta$ und $\mathbb P_{[\alpha,\beta]}:\mathbb R\to\mathbb R$ eine Funktion gegeben durch $$P_{[\alpha,\beta]}(x)=\begin{cases}\alpha&\mid x<\alpha\\x&\mid x\in[\alpha,\beta]\\\beta&x>\beta\end{cases}$$
+Sei $(\overline y,\overline u)$ eine Lösung des Optimierungsproblems und $\lambda$ der Lagrange-Multiplikator bezüglich der Gleichungsrestriktion. Dann gilt für $i=1,...,n$
+$$\overline u^i = \mathbb P_{[u_a^i,u_b^i]}(\frac{1}{\gamma}\lambda_i)$$
+wobei $x^i$ die $i$-te Komponente eines Vektors $x\in\mathbb R^n$ bezeichne. 
+\begin{proof}
+\end{proof}
+\end{compactenum}
