@@ -2,10 +2,20 @@
 Seien $A: \mathbb R^n\to \mathbb R^m$ linear, $\mathbb R^n\to \mathbb R$ stetig differenzierbar und $b\in\mathbb R^m$.\\\\
 Betrachte die Optimierungsprobleme $(1)\begin{cases}\min f(x)\\Ax=b\end{cases}$ und $(2)\begin{cases}\min f(x)\\Ax\leq b\\-Ax\leq -b\end{cases}$.\newline\newline
 \begin{compactenum}[(i)]
-\item Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem $(1)$ sind\\\\
-Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem $(2)$ sind \\\\
-\item Seien $\mu_1,\mu_2\in\mathbb R^m$ Lagrange-Multiplikatoren bezüglich der Ungleichungsrestriktionen in $(2)$. Dann ist $\lambda:=\mu_1-\mu_2\in\mathbb R^m$ ein Lagrange-Multiplikator bezüglich der Gleichungsrestriktion in $(1)$.
-\begin{proof}
-\end{proof}~\newline\newline
-\item Gibt es zu jedem Lagrange-Multiplikator $\lambda\in\mathbb R^m$ bezüglich der Gleichungsrestriktion in $(1)$ Lagrange-Multiplikatoren $\mu_1,\mu_2\in\mathbb R^m$ bezüglich der Ungleichungsrestriktionen in $(2)$ mit $\lambda=\mu_1-\mu_2$?
+\item Die Karush-Kuhn-Tucker-Bedingung für das Optimierungsproblem $(1)$ ist
+\begin{align*}
+\nabla f(x)+A^T\lambda&=0
+\end{align*}
+Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem $(2)$ sind
+\begin{align*}
+\nabla f(x)+A^T\mu_1-A^T\mu_2&=&\nabla f(x)+\begin{bmatrix} A\\-A\end{bmatrix}^T\begin{bmatrix} \mu_1\\\mu_2\end{bmatrix}&=0\\
+\langle \mu_1,Ax-b\rangle-\langle \mu_2,Ax-b\rangle&=&\left\langle \begin{bmatrix} \mu_1\\\mu_2\end{bmatrix},\begin{bmatrix} A\\-A\end{bmatrix}x-\begin{bmatrix} b\\-b\end{bmatrix}\right\rangle&=0\\
+&&\begin{bmatrix} \mu_1\\\mu_2\end{bmatrix}&\geq0
+\end{align*}
+\item Sei $x\in\mathbb R^n$ ein Minimierer von $(1)$ und $(2)$ und seien $\mu_1,\mu_2\in\mathbb R^m$ Lagrange-Multiplikatoren bezüglich der Ungleichungsrestriktionen in $(2)$. Dann ist $\lambda:=\mu_1-\mu_2\in\mathbb R^m$ ein Lagrange-Multiplikator bezüglich der Gleichungsrestriktion in $(1)$, denn die Karush-Kuhn-Tucker-Bedingung für $(1)$ lässt sich nach Aufgabenteil (i) auf die erste Karush-Kuhn-Tucker-Bedingung für $(2)$ zurückführen: $$\nabla f(x)+A^T\lambda=\nabla f(x)+A^T(\mu_1-\mu_2)=\nabla f(x)+A^T\mu_1-A^T\mu_2\overset{(i)}=0$$\newline
+\item Sei $x\in\mathbb R^n$ ein Minimierer von $(1)$ und $(2)$ und $\lambda\in\mathbb R^m$ ein Lagrange-Multiplikator bezüglich der Gleichungsrestriktion in $(1)$. Dann gibt es $\mu_1,\mu_2\in\mathbb R^m$ mit $\begin{bmatrix}\mu_1\\\mu_2\end{bmatrix}\geq 0$ und $\lambda = \mu_1-\mu_2$. Damit ist die erste Karush-Kuhn-Tucker-Bedingung für $(2)$ erfüllt:
+$$\nabla f(x)+A^T\mu_1-A^T\mu_2=\nabla f(x)+A^T(\mu_1-\mu_2)=\nabla f(x)+A^T\lambda=0$$
+Weil $x\in\mathbb R^n$ als Minimierer von $(1)$ und $(2)$ insbesondere zulässig sein muss, gilt $Ax=b$ und daher auch die zweite Karush-Kuhn-Tucker-Bedingung für $(2)$:
+$$\langle \mu_1,Ax-b\rangle-\langle \mu_2,Ax-b\rangle=\langle \mu_1,0\rangle-\langle \mu_2,0\rangle=0-0=0$$
+Insgesamt sind $\mu_1,\mu_2\in\mathbb R^m$ Lagrange-Multiplikatoren bezüglich der Ungleichungsrestriktionen in $(2)$.
 \end{compactenum}
