@@ -1,8 +1,23 @@
 \assignment{5.2}
 
-Seien $G:\mathbb R^n\to\mathbb R^m$ eine lineare Abbildung, $r\in\mathbb R^m$ ein Vektor und $f: \mathbb R^n\to R$ eine stetig differenzierbare konvexe Funktion. Betrachte den Kegel $C:=\{x\in\mathbb R^n\mid\forall  i\in\{1,...,n\} x_i\leq 0\}$. Dann gilt für jeden Punkt $\overline x\in\mathbb R^n$ die folgende Äquivalenz:\\ $\overline x$ ist eine Lösung des Optimierungsproblems $\begin{cases}\min f(x)\\Gx-r\in C\end{cases}$\\
+Seien $G:\mathbb R^n\to\mathbb R^m$ eine lineare Abbildung, $r\in\mathbb R^m$ ein Vektor und $f: \mathbb R^n\to \mathbb R$ eine stetig differenzierbare konvexe Funktion. Betrachte den Kegel $C:=\{x\in\mathbb R^n\mid\forall  i\in\{1,...,n\}: x_i\leq 0\}$. Dann gilt für jeden Punkt $\overline x\in\mathbb R^n$ die folgende Äquivalenz:\\ $\overline x$ ist eine Lösung des Optimierungsproblems $\begin{cases}\min f(x)\\Gx-r\in C\end{cases}$\\
 $\Leftrightarrow$ Es gibt ein $\mu\in\mathbb R^m$ mit $G\overline x-r\in N(C^*,\mu)$ und $\nabla f(\overline x)+G^T\mu=0$.
 \begin{proof}
-$(\Rightarrow)$\\\\
-$(\Leftarrow)$
+Die Optimierungsprobleme $\begin{cases}\min f(x)\\Gx-r\in C\end{cases}$ und $\begin{cases}\min f(x)\\Gx\leq r\end{cases}$ sind äquivalent, was sich einfach aus der Definition des Kegels $C$ und $Gx-r\leq 0\Leftrightarrow Gx\leq r$ ergibt.\\\\
+Wenn $\overline x$ eine Lösung des Optimierungsproblems $\begin{cases}\min f(x)\\Gx\leq r\end{cases}$ ist, dann sind aufgrund der Differenzierbarkeit von $f$ (in $\overline x$) die Karush-Kuhn-Tucker-Bedingungen notwendig. Es gibt also ein $\mu\in\mathbb R^n$ mit
+\begin{align*}\nabla f(\overline x)+G^T\mu&=0\\\langle \mu, G\overline x-r \rangle&=0\\\mu&\geq 0\end{align*}
+Weil $f$ konvex ist, sind die Karush-Kuhn-Tucker-Bedingungen auch hinreichend. Also ist $\overline x$ genau dann ein Minimierer, wenn obige Karush-Kuhn-Tucker-Bedingungen gelten.\\\\
+Die zweite Karush-Kuhn-Tucker-Bedingung liefert folgende Implikationskette, in welcher der Dualkegel $C^*=\{y\in (\mathbb R^n)^*\mid \forall c\in C: \langle c,y\rangle \leq 0\}$ verwendet wird:
+\begin{align*}&\langle \mu, G\overline x-r\rangle=0\\
+\Rightarrow&\forall y\in C^*:\underbrace{\langle \underbrace{G\overline x-r}_{\in C},y\rangle}_{\leq 0}-\underbrace{\langle G\overline x-r,\mu\rangle}_{=0}\leq 0\\
+\Rightarrow&\forall y\in C^*:\langle G\overline x-r,y-\mu\rangle\leq 0\\
+\Rightarrow& G\overline x-r\in N(C^*,\mu)
+\end{align*}
+Wegen $\forall c\in C: \langle 0,y\rangle=0\leq 0$ gilt $0\in C^*$. Dies liefert die Rückrichtung:
+\begin{align*}&G\overline x-r\in N(C^*,\mu)\\
+\Rightarrow&\forall y\in C^*:\langle G\overline x-r,y-\mu\rangle\leq 0\\
+\Rightarrow&\langle G\overline x-r,-\mu\rangle=\langle G\overline x-r,0-\mu\rangle\leq 0\\
+\Rightarrow&\langle \underbrace{G\overline x-r}_{\leq 0},\mu\rangle\geq 0\\
+\overset{???}\Rightarrow& \langle G\overline x-r,\mu\rangle=0\land \mu\geq 0
+\end{align*}
 \end{proof}
