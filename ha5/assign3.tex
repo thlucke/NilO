@@ -1,29 +1,28 @@
 \assignment{5.3}
 
 Seien $A: \mathbb R^n\to \mathbb R^n$ linear, $y_d\in\mathbb R^n$, $\gamma>0$ und $u_a,u_b\in\mathbb R^n$ mit $u_a<u_b$. Betrachte das endlichdimensionale Optimalsteuerungsproblem
-$\begin{cases}\min J(y,u)=\frac{1}{2}\|Ay-y_d\|_2^2+\frac{\gamma}{2}\|u\|_2^2, (y,u)\in\mathbb R^n\times \mathbb R^n\\Ay=u\\u_a\leq u\leq u_b\end{cases}$
+$$\begin{cases}\min J(y,u)=\frac{1}{2}\|Ay-y_d\|_2^2+\frac{\gamma}{2}\|u\|_2^2, (y,u)\in\mathbb R^n\times \mathbb R^n\\Ay=u\\u_a\leq u\leq u_b\end{cases}$$
 \begin{compactenum}[(i)]
 \item 
-Die Ableitung von $J(y,u)$ ist
-$$\nabla J(y,u)=\begin{bmatrix}A^T(Ay-y_d)\\\gamma u\end{bmatrix}$$
+Der Gradient von $J$ lautet $$\nabla J(y,u)=\begin{bmatrix}A^T(Ay-y_d)\\\gamma u\end{bmatrix}.$$
 Die Nebenbedingungen lassen sich umschreiben zu
 \begin{align*}\begin{bmatrix}A&-I\end{bmatrix}\begin{bmatrix}y\\u\end{bmatrix}&=0\\
 \begin{bmatrix}0&-I\\0&I\end{bmatrix}\begin{bmatrix}y\\u\end{bmatrix}&\leq \begin{bmatrix}-u_a\\u_b\end{bmatrix}
 \end{align*}
 Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem sind also
 \begin{align*}
-\begin{bmatrix}A^T(Ay-y_d+\lambda)\\\gamma u-\lambda-\mu_a+\mu_b\end{bmatrix}=\nabla J(y,u)+\begin{bmatrix}A&-I\end{bmatrix}^T\lambda+\begin{bmatrix}0&-I\\0&I\end{bmatrix}^T\begin{bmatrix}\mu_a\\\mu_b\end{bmatrix}&=0\\\mu_b(u-u_b)-\mu_a(u-u_a)=\left\langle\begin{bmatrix}0&-I\\0&I\end{bmatrix}\begin{bmatrix}y\\u\end{bmatrix}-\begin{bmatrix}-u_a\\u_b\end{bmatrix} ,\begin{bmatrix}\mu_a\\\mu_b\end{bmatrix} \right\rangle &=0\\\begin{bmatrix}\mu_a\\\mu_b\end{bmatrix}&\geq 0\end{align*}\newline
+\begin{bmatrix}A^T(Ay-y_d+\lambda)\\\gamma u-\lambda-\mu_a+\mu_b\end{bmatrix}=\begin{bmatrix}A^T(Ay-y_d)\\\gamma u\end{bmatrix}+\begin{bmatrix}A&-I\end{bmatrix}^T\lambda+\begin{bmatrix}0&-I\\0&I\end{bmatrix}^T\begin{bmatrix}\mu_a\\\mu_b\end{bmatrix}&=0\\\mu_a(u_a-u)+\mu_b(u-u_b)=\left\langle\begin{bmatrix}0&-I\\0&I\end{bmatrix}\begin{bmatrix}y\\u\end{bmatrix}-\begin{bmatrix}-u_a\\u_b\end{bmatrix} ,\begin{bmatrix}\mu_a\\\mu_b\end{bmatrix} \right\rangle &=0\\\mu_a,\mu_b,\mu_c&\geq 0\end{align*}\newpage
 \item Für $\alpha,\beta\in\mathbb R$ mit $\alpha\leq\beta$ sei $\mathbb P_{[\alpha,\beta]}:\mathbb R\to\mathbb R$ definiert durch $\mathbb P_{[\alpha,\beta]}(x)=\begin{cases}\alpha&\mid x<\alpha\\x&\mid x\in[\alpha,\beta]\\\beta&\mid x>\beta\end{cases}$
 und für einen Vektor $x\in\mathbb R^n$ werde mit $x^i$ dessen $i$-te Komponente bezeichnet. \\\\
-Sei $(\overline y,\overline u)$ eine Lösung des Optimierungsproblems und $\lambda$ wie oben der Lagrange-Multiplikator bezüglich der Gleichungsrestriktion. Dann gilt für $i=1,...,n$
-$$\overline u^i = \mathbb P_{[u_a^i,u_b^i]}\left(\frac{1}{\gamma}\lambda_i\right).$$
+Sei $(y,u)$ eine Lösung des Optimierungsproblems und $\lambda$ wie oben der Lagrange-Multiplikator bezüglich der Gleichungsrestriktion. Dann gilt für $i=1,...,n$
+$$u^i = \mathbb P_{[u_a^i,u_b^i]}\left(\frac{1}{\gamma}\lambda^i\right).$$
 \begin{proof}
-Die zweite Zeile der ersten Karush-Kuhn-Tucker-Bedingung in (i) ist äquivalent zu $u=\frac{1}{\gamma}(\lambda+\mu_a-\mu_b)$, komponentenweise also $u^i=\frac{1}{\gamma}(\lambda^i+\mu_a^i-\mu_b^i)$.\\\\
-Für $i=1,...,n$ gibt es nun jeweils drei mögliche Fälle:
+Die zweite Zeile der ersten Karush-Kuhn-Tucker-Bedingung in (i) ist äquivalent zu $u=\frac{1}{\gamma}(\lambda+\mu_a-\mu_b)$, d.h. $ u^i=\frac{1}{\gamma}(\lambda^i+\mu_a-\mu_b)$ für $i=1,...,n$. Die zweite Karush-Kuhn-Tucker-Bedingung besagt $\mu_a(u_a^i-u^i)+\mu_b(u^i-u_b^i)=0$ für $i=1,...,n$.\\\\
+Für die $u^i$ lassen sich nun jeweils drei mögliche Fälle unterscheiden:
 \begin{enumerate}
-\item[1.] Fall $\frac{1}{\gamma}\lambda_i\leq u_a^i$. 
-\item[2.] Fall $\frac{1}{\gamma}\lambda_i\in[u_a^i,u_b^i]$. 
-\item[3.] Fall $\frac{1}{\gamma}\lambda_i\geq u_b^i$. 
+\item[1.] Fall $u^i\leq u_a^i$: Dann ist $u_a^i-u^i\geq 0$ und $u^i-u_b^i<0$.
+\item[2.] Fall $u^i\in]u_a^i,u_b^i[$: Dann ist $u_a^i-u^i<0$ und $u^i-u_b^i<0$. Wegen $\mu_a,\mu_b\geq 0$ und $\mu_a(u_a^i-u^i)+\mu_b(u^i-u_b^i)=0$ folgt $\mu_a=0=\mu_b$ und damit $u^i=\frac{1}{\gamma}\lambda^i$.
+\item[3.] Fall $u^i\geq u_b^i$: Dann ist $u_a^i-u^i<0$ und $u^i-u_b^i\geq 0$.
 \end{enumerate}
 \end{proof}
 \end{compactenum}

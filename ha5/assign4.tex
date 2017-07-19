@@ -1,11 +1,26 @@
 \assignment{5.4}
 
-Betrachte das Optimierungsproblem $\begin{cases}\min\limits_{x\in\mathbb R^2} f(x)=(x_1-1)(x_2-1)\\x_1+x_2\leq 2\\x_1\geq 0\\x_2\geq 0\end{cases}$\newline\newline
+Betrachte das Optimierungsproblem $\begin{cases}\min\limits_{x\in\mathbb R^2} f(x)=(x_1-1)(x_2-1)=x_1x_2-x_1-x_2+1\\x_1+x_2\leq 2\\x_1\geq 0\\x_2\geq 0\end{cases}$\newline\newline
 \begin{compactenum}[(i)]
-\item Die Punkte $(0,2)^T$ und $(2,0)^T$ erfüllen die Karush-Kuhn-Tucker-Bedingungen.
-\begin{proof}
-\end{proof}~\newline
-Zugehörige Lagrange-Multiplikatoren sind
-Eindeutigkeit?\\\\
-\item Hinreichende Bedingungen zweiter Ordnung?
+\item Der Gradient von $f$ lautet $$\nabla f(x)=\begin{bmatrix}x_2-1\\x_1-1\end{bmatrix}.$$
+Die Nebenbedingungen lassen sich umschreiben zu
+\begin{align*}
+\begin{bmatrix}1&1\\-1&0\\0&-1\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}&\leq \begin{bmatrix}2\\0\\0\end{bmatrix}
+\end{align*}
+Die Karush-Kuhn-Tucker-Bedingungen für das Optimierungsproblem sind also
+\begin{align*}\begin{bmatrix}x_2+\mu_a-\mu_b-1\\x_1+\mu_a-\mu_c-1\end{bmatrix}=\begin{bmatrix}x_2-1\\x_1-1\end{bmatrix}+\begin{bmatrix}1&1\\-1&0\\0&-1\end{bmatrix}^T\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix}&=0\\
+(x_1+x_2-2)\mu_a-x_1\mu_b-x_2\mu_c=
+\left\langle\begin{bmatrix}1&1\\-1&0\\0&-1\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}- \begin{bmatrix}-2\\0\\0\end{bmatrix} ,\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix} \right\rangle &=0\\\mu_a,\mu_b,\mu_c&\geq 0\end{align*}
+Einsetzen des zulässigen Punktes $\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}0\\2\end{bmatrix}$ liefert das lineare Gleichungssystem 
+\begin{align*}\begin{bmatrix}1&-1&0\\1&0&-1\\0&0&-2\end{bmatrix}\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix}&=\begin{bmatrix}-1\\1\\0\end{bmatrix}\\\mu_a,\mu_b,\mu_c&\geq 0\end{align*}
+mit der eindeutigen Lösung $\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix}=\begin{bmatrix}1\\2\\0\end{bmatrix}$.\\\\
+Also erfüllt $\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}0\\2\end{bmatrix}$ die Karush-Kuhn-Tucker-Bedingungen mit dem eindeutigen Lagrange-Multiplikator $\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix}=\begin{bmatrix}1\\2\\0\end{bmatrix}$. Analog erfüllt $\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}2\\0\end{bmatrix}$ die Karush-Kuhn-Tucker-Bedingungen mit dem eindeutigen Lagrange-Multiplikator $\begin{bmatrix}\mu_a\\\mu_b\\\mu_c\end{bmatrix}=\begin{bmatrix}1\\0\\2\end{bmatrix}$.\newpage
+\item Die Hesse-Matrix von $f$ lautet unabhängig von $x$
+$$f''(x)=\begin{bmatrix}0&1\\1&0\end{bmatrix}$$
+Die hinreichende Bedingung zweiter Ordnung für das Optimierungsproblem ist also
+\begin{align*}&\exists \alpha\geq 0: \forall d=\begin{bmatrix}d_1\\d_2\end{bmatrix}\in \{d\in K(\mathcal F, x)\mid\langle \nabla f(x),d\rangle=0\}:\\ &2d_1d_2=d^T\begin{bmatrix}0&1\\1&0\end{bmatrix}d=d^Tf''(x)d\geq\alpha\|d\|^2=d_1^2+d_2^2\end{align*}
+Die letzte Ungleichung ist äquivalent zu
+$$(d_1-d_2)^2=d_1^2+d_2^2-2d_1d_2\leq 0$$
+Für $x=\begin{bmatrix}0\\2\end{bmatrix}$ ist $\nabla f(x)=\begin{bmatrix}1\\-1\end{bmatrix}$. Für $d_1-d_2=\langle \nabla f(x),d\rangle=0$ ist also $(d_1-d_2)^2\leq 0$ und damit die hinreichende Bedingung zweiter Ordnung erfüllt.\\\\
+Für $x=\begin{bmatrix}2\\0\end{bmatrix}$ ist $\nabla f(x)=\begin{bmatrix}-1\\1\end{bmatrix}$. Für $d_2-d_1=\langle \nabla f(x),d\rangle=0$ ist also $(d_1-d_2)^2\leq 0$ und damit die hinreichende Bedingung zweiter Ordnung erfüllt.
 \end{compactenum}
