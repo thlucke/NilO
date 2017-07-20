@@ -1,3 +1,4 @@
 \assignment{6.6}
 
-Lokale Lösungen des Optimierungsproblems $\begin{cases}\min 3y+5\\(x+2)e^x-y\leq 0\end{cases}$
+Das Optimierungsproblem $\begin{cases}\min 3y+5\\(x+2)e^x-y\leq 0\end{cases}$ lässt sich auch schreiben als $\begin{cases}\min 3y+5\\y\geq (x+2)e^x\end{cases}$. Weil $y\mapsto 3y+5$ streng monoton wachsend ist, gilt für jedes Minimum $y= (x+2)e^x$, weshalb das Minimierungsproblem die äquivalente Formulierung $\begin{cases}\min 3y+5\\y=(x+2)e^x\end{cases}$ hat.\\\\
+Einsetzen der Restriktion in die Zielfunktion ergibt das unrestringierte eindimensionale Optimierungsproblem $\min\limits_{x\in\mathbb R} f(x)=3(x+2)e^x+5$. Die notwendige Bedingung für ein lokales Minimum $f'(x)=3(e^x+(x+2)e^x)=3(x+3)e^x=0$ gilt wegen $e^x>0$ für alle $x\in\mathbb R$ nur bei $x+3=0$. Bei $x=-3$ ist auch die hinreichende Bedingung $f''(x)=3(e^x+(x+3)e^x)=(x+4)e^x=(-3+4)e^{-3}>0$ für ein Minimum erfüllt. Daraus folgt, dass $\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}-3\\5-3e^{-3}\end{bmatrix}$ das einzige lokale Minimum ist.
