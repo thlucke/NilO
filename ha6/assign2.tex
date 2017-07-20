@@ -1,18 +1,41 @@
 \assignment{6.2}
 
-Sei $M$ eine Menge mit $\emptyset\neq M\subseteq \mathbb R^n$ und $\overline x\in M$.
+Sei $M$ eine Menge mit $\emptyset\neq M\subseteq \mathbb R^n$ und $x\in M$.
 
 \begin{compactenum}[(i)]
-\item $T(M,\overline x)$ ist abgeschlossen.
+\item $T(M,x)$ ist abgeschlossen.
 \begin{proof}
+Wir zeigen die Folgenabgeschlossenheit von $T(M,x)$. Sei $(d_n)_{n\in\mathbb N}$ eine Folge mit $d_n\in T(M,x)$, die gegen $d\in\mathbb R^n$ konvergiert. Für ein beliebiges $\varepsilon>0$ gibt es also ein $N(\varepsilon)\in\mathbb N$ mit $\|d_n-d\|\leq\varepsilon$ für alle $n\geq N(\varepsilon)$.\\\\
+Für alle $d_n\in T(M,x)$ gibt es nach der Definition des Tangentialkegels eine Folge $(x_n^m)_{m\in\mathbb N}$ mit $x_n^m\in M$ und $\lim\limits_{m\to\infty} x_n^m=x$ sowie eine Folge $(t_n^m)_{m\in\mathbb N}$ mit $t_n^m\in\mathbb R_{>0}$ und $\lim\limits_{m\to\infty}t_n^m = 0$, mit denen $\lim\limits_{m\to\infty} \frac{x_n^m-x}{t_n^m}=d_n$ gilt. Für ein beliebiges $\varepsilon>0$ gibt es also ein $M_n(\varepsilon)\in\mathbb N$ mit $\max\{\|x_n^m-x\|,\|t_n^m\|,\|\frac{x_n^m-x}{t_n^m}-d_n\|\}\leq\varepsilon$ für alle $m\geq M_n(\varepsilon)$.\\\\
+Betrachte nun die Folge $(x_k)_{k\in\mathbb N}$ mit $x_k=(x_{N(\frac{1}{k})})^{M_{\frac{1}{k}}(\frac{1}{k})}\in M$ sowie die zugehörige Folge $(t_k)_{k\in\mathbb N}$ mit $t_k=(t_{N(\frac{1}{k})})^{M_{\frac{1}{2k}}(\frac{1}{k})}\in\mathbb R_{>0}$. Wegen $\|x_k-x\|\leq\frac{1}{k}$ gilt $\lim\limits_{k\to\infty} x^k=x$ und wegen $\|t_k\|\leq\frac{1}{k}$ gilt $\lim\limits_{k\to\infty} t^k=0$. Wegen \begin{align*}\|x_k-x\|&=\|(x_{N(\frac{1}{k})})^{M_{\frac{1}{k}}(\frac{1}{k})}-d_{N(\frac{1}{k})}+d_{N(\frac{1}{k})}-d\|&\\&\leq\|(x_{N(\frac{1}{k})})^{M_{\frac{1}{k}}(\frac{1}{k})}-d_{N(\frac{1}{k})}\|+\|d_{N(\frac{1}{k})}-d\|&\\&\leq\frac{1}{k}+\frac{1}{k}&=\frac{2}{k}\end{align*} gilt schließlich $\lim\limits_{k\to\infty} \frac{x^k-x}{t^k}=d$, also $d\in T(M,x)$. Somit ist $T(M,x)$ (folgen)abgeschlossen.
+\end{proof}\newpage
+\item Ist $M$ konvex, so ist auch $T(M,x)$ konvex.
+\begin{proof}
+Sei $M$ konvex und seien $a,b\in T(M,x)$.\\\\
+Wegen $a\in T(M,x)$ gibt es eine Folge $(y_n)_{n\in\mathbb N}$ aus $y_n\in M$ mit $\lim\limits_{n\to\infty} y_n=x$ und eine Folge $(s_n)_{n\in\mathbb N}$ aus $s_n\in\mathbb R_{>0}$ und $\lim\limits_{n\to\infty}s_n = 0$, so dass $\lim\limits_{n\to\infty} \frac{y_n-x}{s_n}=a$ gilt. Wegen $b\in T(M,x)$ gibt es eine Folge $(z_n)_{n\in\mathbb N}$ aus $z_n\in M$ mit $\lim\limits_{n\to\infty} z_n=x$ und eine Folge $(t_n)_{n\in\mathbb N}$ aus $t_n\in\mathbb R_{>0}$ mit $\lim\limits_{n\to\infty}t_n = 0$, so dass $\lim\limits_{n\to\infty} \frac{z_n-x}{t_n}=b$ gilt.\\\\
+Sei nun $\lambda\in[0,1]$ beliebig. Für $(x_n)_{n\in\mathbb N}$ mit $x_n:=\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))$ gilt wegen der Beschränktheit von $y_n$ sowie $z_n$ und $\lim\limits_{n\to\infty}t_n = 0=\lim\limits_{n\to\infty}s_n$
+\begin{align*}
+\lim\limits_{n\to\infty} x_n &=\lim\limits_{n\to\infty} \lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))\\&=\lambda(\lim\limits_{n\to\infty}x+t_n(y_n-x))+(1-\lambda)(\lim\limits_{n\to\infty} x+s_n(z_n-x))\\&=\lambda x+(1-\lambda)x
+\end{align*}
+Wegen $\lim\limits_{n\to\infty} t_n=0=\lim\limits_{n\to\infty} s_n=0$ gibt es $N\in\mathbb N$, so dass für alle $n\geq N$ die Ungleichung $t_n,s_n\leq 1$ und wegen der Konvexität $x+t_n(y_n-x)\in M$,  $x+s_n(z_n-x)\in M$ und schließlich $\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))\in M$ folgt. Für $r_n:=s_nt_n$ gilt $\lim\limits_{n\to\infty} r_n=\lim\limits_{n\to\infty} s_nt_n=\lim\limits_{n\to\infty} s_n\cdot \lim\limits_{n\to\infty}t_n=0$. Mit diesen Bezeichnungen gilt \begin{align*}\lim\limits_{n\to\infty}\frac{x_n-x}{r_n}&=\lim\limits_{n\to\infty}\frac{(\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x)))-x}{s_nt_n}\\&=\lim\limits_{n\to\infty}\frac{\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))-\lambda x-(1-\lambda)x}{s_nt_n}\\&=\lim\limits_{n\to\infty}\frac{\lambda((x+t_n(y_n-x))-x)+(1-\lambda)((x+s_n(z_n-x))-x)}{s_nt_n}\\&=\lim\limits_{n\to\infty}\frac{\lambda(y_n-x)t_n+(1-\lambda)(z_n-x)s_n}{s_nt_n}\\&=\lim\limits_{n\to\infty}\lambda \frac{y_n-x}{s_n}+(1-\lambda)\frac{z_n-x}{t_n}\\&=\lambda \lim\limits_{n\to\infty}\frac{y_n-x}{s_n}+(1-\lambda)\lim\limits_{n\to\infty}\frac{z_n-x}{t_n}\\
+&=\lambda a+(1-\lambda)b,
+\end{align*} also $\lambda a+(1-\lambda)b\in T(M,x)$.
+Also ist mit $M$ auch $T(M,x)$ konvex.
+\newpage
 \end{proof}
-\item Ist $M$ konvex, so ist auch $T(M,\overline x)$ konvex.
+\item Es gilt $T(M,x)\subseteq \overline{K(M,x)}$.
 \begin{proof}
+Sei $d\in T(M,x)$. Dann gibt es eine Folge $(x_n)_{n\in\mathbb N}$ aus $x_n\in M$ mit $\lim\limits_{n\to\infty} x_n=x$ und eine Folge $(t_n)_{n\in\mathbb N}$ aus $t_n\in\mathbb R_{>0}$ mit $\lim\limits_{n\to\infty}t_n = 0$, so dass $\lim\limits_{n\to\infty} \frac{x_n-x}{t_n}=d$.
+Wegen $x_n\in M$ und $\alpha_n=\frac{1}{t_n}>0$ ist $\frac{x_n-x}{t_n}=\alpha(x_n-x)\in K(M,x)$. Also ist $d=\lim\limits_{n\to\infty} \frac{x_n-x}{t_n}\in \overline{K(M,x)}$.
 \end{proof}
-\item Es gilt $T(M,\overline x)\subseteq \overline{K(M,\overline x)}$
+\item Ist $M$ konvex, so gilt sogar $T(M,x)=\overline{K(M,x)}$.
 \begin{proof}
-\end{proof}
-\item Ist M konvex, so gilt sogar $T(M,\overline x)=\overline{K(M,\overline x)}$.
-\begin{proof}
+Sei $M$ konvex und sei $d\in \overline{K(M,x)}$. Dann gibt es eine Folge $(d_n)_{n\in\mathbb N}$ aus $d_n\in K(M,x)$, d.h. $d_n=\alpha_n(y_n-x)$ mit $\alpha_n>0$ und $y_n\in M$, mit $\lim\limits_{n\to\infty} d_n=d$. \\\\
+Für die Folge $(\alpha_n)_{n\in\mathbb N}$ gibt es zwei Fälle:
+\begin{enumerate}
+\item[1.] Fall $\liminf\limits_{n\in\mathbb N}\alpha_n>0$. Wegen $\lim\limits_{n\to\infty}\alpha_n(y_n-x)=d$ muss dann die Folge $(y_n)_{n\in\mathbb N}$ beschränkt sein. Für $x_n:=x+\frac{1}{n}(y_n-x)$ gilt also $\lim\limits_{n\to\infty} x+\frac{1}{n}(y_n-x)=x$. Wegen der Konvexität ist $x_n=x+\frac{1}{n}(y_n-x)\in M$. Für $t_n:=\frac{1}{n\alpha_n}$ gilt $\lim\limits_{n\to\infty} \frac{1}{n\alpha_n}=0$. Mit diesen Bezeichnungen gilt $$d_n=\alpha_n(y_n-x)=\frac{y_n-x}{\frac{1}{\alpha}}=\frac{\frac{1}{n}(y_n-x)}{\frac{1}{n\alpha}}=\frac{x_n-x}{t_n},$$
+Wegen $\lim\limits_{n\to\infty} d_n=\lim\limits_{n\to\infty}\frac{x_n-x}{t_n}=d$ folgt schließlich $d\in T(M,x)$.
+\item[2.] Fall $\liminf\limits_{n\in\mathbb N}\alpha_n=0$. ???
+\end{enumerate}
 \end{proof}
 \end{compactenum}
