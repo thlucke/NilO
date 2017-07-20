@@ -1,4 +1,7 @@
 \assignment{6.1}
 
-Seien $M:=\{(x,y)^T\in\mathbb R^2\mid x=0\lor y=0\}$ und $\overline x=(0,0)^T$.\\\\
-Was ist der Tangentialkegel $T(M,\overline x)$?
+Seien $M:=\left\{\begin{bmatrix}y\\z\end{bmatrix}\in\mathbb R^2\mid y=0\lor z=0\right\}$ und $x=\begin{bmatrix}0\\0\end{bmatrix}$. Dann gilt $M=T(M,x)$.
+\begin{proof}Zuerst sei festgestellt, dass M ein Kegel ist, weil für alle $d\in\mathbb M$\newline
+$(\subseteq)$ Sei $d\in M$. Betrachte die Folgen $(d_n)_{n\in\mathbb N}$ mit $x_n=\frac{1}{n}d$, das wegen der Kegeleigenschaft in $M$ liegt, und $(t_n)_{n\in\mathbb N}$ mit $t_n=\frac{1}{n}$. Dann gilt $\lim\limits_{n\to\infty} x_n=0=x$, $\lim\limits_{n\to\infty} t_n=0$ und $\lim\limits_{n\to\infty} \frac{x_n-x}{t_n}=\frac{\frac{1}{n}d-0}{d}=0$, also $M\subseteq T(M,x)$.\\\\
+$(\supseteq)$ Sei $d\in T(M,x)$. Dann gibt es Folgen $(x_n)_{n\in\mathbb N}$ aus $x_n\in M$ mit $\lim\limits_{n\to\infty} x_n=x=0$ und $(t_n)_{n\in\mathbb N}$ aus $t^n\in \mathbb R_{>0}$ mit $\lim\limits_{n\to\infty} t_n=0$, so dass für $d^n=\frac{x_n-x}{t_n}=\frac{x_n}{t_n}$, das wegen der Kegeleigenschaft in $M$ liegt, $\lim\limits_{n\to\infty} d_n=d$ gilt. Da $M$ als Vereinigung der beiden abgeschlossenen Mengen $\left\{\begin{bmatrix}y\\z\end{bmatrix}\in\mathbb R^2\mid y=0\right\}$ und $\left\{\begin{bmatrix}y\\z\end{bmatrix}\in\mathbb R^2\mid z=0\right\}$ abgeschlossen ist, gilt für den Grenzwert $d\in M$, also $T(M,x)\subseteq M$.
+\end{proof}
