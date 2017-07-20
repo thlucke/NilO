@@ -1,10 +1,21 @@
 \assignment{6.3}
 
-Sei $g: \mathbb R^n\to \mathbb R^m$ stetig differenzierbar und $\mathcal F=\{x\in\mathbb R^n\mid g(x)\leq 0\}$. Für $x\in\mathcal F$ sei $J(x)=\{j\in\{1,...,m\}\mid g_j(x)=0\}$. Betrachte den Kegel $C=\{x\in\mathbb R^m\mid \forall i\in\{1,...,m\}:x_i\leq 0\}$. Dann gilt für jeden Punkt $x\in\mathcal F$ die folgende Äquivalenz:\\\\
-$\overline x$ erfüllt die Bedingung von Zowe und Kurcyusz: $$\text{im} g'(x)+K(C,g(\overline x))=\mathbb R^m$$
-$\Leftrightarrow$ $\overline x$ erfüllt die Bedingung von Mangasarian und Fromovitz ohne Gleichungsrestriktionen:
-$$\exists d\in\mathbb R^n:\forall j\in J(\overline x):\langle \nabla g_j(\overline x),d\rangle < 0$$
-\begin{proof}
-$(\Rightarrow)$\\\\
-$(\Leftarrow)$
+Sei $g: \mathbb R^n\to \mathbb R^m$ stetig differenzierbar und $\mathcal F=\{x\in\mathbb R^n\mid g(x)\leq 0\}$. Für $x\in\mathcal F$ sei $J(x)=\{j\in\{1,...,m\}\mid g_j(x)=0\}$. Betrachte $C=\{x\in\mathbb R^m\mid \forall i\in\{1,...,m\}:x_i\leq 0\}$, das ein Kegel ist. Dann gilt für jeden Punkt $x\in\mathcal F$ die folgende Äquivalenz:\\\\
+$x$ erfüllt die Bedingung von Zowe und Kurcyusz: $$\text{im} g'(x)+K(C,g(x))=\mathbb R^m$$
+$\Leftrightarrow$ $x$ erfüllt die Bedingung von Mangasarian und Fromovitz ohne Gleichungsrestriktionen:
+$$\exists d\in\mathbb R^n:\forall j\in J(x):\langle \nabla g_j(x),d\rangle < 0$$
+\begin{proof}~\\\\
+$(\Rightarrow)$ Für die Bedingung von Zowe und Kurcyusz gibt es die alternative Schreibweise
+$$\forall z\in\mathbb R^n: \exists h\in\mathbb R^n,c\in C, \alpha>0: z=g'(x)h+\alpha(c-g(x))$$
+Für die Komponente $j\in\{1,...,n \}$ lautet diese Gleichung
+$$z_j=\langle g_j(x),h\rangle+\alpha(c_j-g_j(x))$$
+Für $j\in J(x)$ gilt $g_j(x)=0$ und somit
+$$z_j=\langle \nabla g_j(x),h\rangle+\alpha c_j$$
+Für die Wahl $z=(1,...,1)^T\in\mathbb R^n$ ergibt sich
+$$\langle \nabla g_j(x),h\rangle=1-\underbrace{\alpha}_{>0} \underbrace{c_j}_{\leq0}>0$$
+Für die Wahl $d=-h\in\mathbb R^n$ ergibt sich schließlich
+$$\langle \nabla g_j(x),d\rangle=-\langle \nabla g_j(x),h\rangle<0$$
+für alle $j\in J(x)$, d.h. die Bedingung von Mangasarian und Fromovitz ist erfüllt.
+\\\\
+$(\Leftarrow)$ ???
 \end{proof}
