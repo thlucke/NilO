@@ -13,7 +13,7 @@ Betrachte nun die Folge $(x_k)_{k\in\mathbb N}$ mit $x_k=(x_{N(\frac{1}{k})})^{M
 \begin{proof}
 Sei $M$ konvex und seien $a,b\in T(M,x)$.\\\\
 Wegen $a\in T(M,x)$ gibt es eine Folge $(y_n)_{n\in\mathbb N}$ aus $y_n\in M$ mit $\lim\limits_{n\to\infty} y_n=x$ und eine Folge $(s_n)_{n\in\mathbb N}$ aus $s_n\in\mathbb R_{>0}$ und $\lim\limits_{n\to\infty}s_n = 0$, so dass $\lim\limits_{n\to\infty} \frac{y_n-x}{s_n}=a$ gilt. Wegen $b\in T(M,x)$ gibt es eine Folge $(z_n)_{n\in\mathbb N}$ aus $z_n\in M$ mit $\lim\limits_{n\to\infty} z_n=x$ und eine Folge $(t_n)_{n\in\mathbb N}$ aus $t_n\in\mathbb R_{>0}$ mit $\lim\limits_{n\to\infty}t_n = 0$, so dass $\lim\limits_{n\to\infty} \frac{z_n-x}{t_n}=b$ gilt.\\\\
-Sei nun $\lambda\in[0,1]$ beliebig. Für $(x_n)_{n\in\mathbb N}$ mit $x_n:=\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))$ gilt wegen der Beschränktheit von $y_n$ sowie $z_n$ und $\lim\limits_{n\to\infty}t_n = 0=\lim\limits_{n\to\infty}s_n$
+Sei nun $\lambda\in[0,1]$ eine beliebige Konvexitätskonstante. Für $(x_n)_{n\in\mathbb N}$ mit $$x_n:=\lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))$$ gilt wegen der Beschränktheit von $y_n$ sowie $z_n$ und $\lim\limits_{n\to\infty}t_n = 0=\lim\limits_{n\to\infty}s_n$
 \begin{align*}
 \lim\limits_{n\to\infty} x_n &=\lim\limits_{n\to\infty} \lambda(x+t_n(y_n-x))+(1-\lambda)(x+s_n(z_n-x))\\&=\lambda(\lim\limits_{n\to\infty}x+t_n(y_n-x))+(1-\lambda)(\lim\limits_{n\to\infty} x+s_n(z_n-x))\\&=\lambda x+(1-\lambda)x&\\
 &=x

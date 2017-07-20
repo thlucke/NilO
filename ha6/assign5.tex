@@ -1,3 +1,15 @@
 \assignment{6.5}
 
-Sei $A:\mathbb R^n\to \mathbb R^n$ eine symmetrische positiv definite lineare Abbildung. Dann löst jeder normierte Eigenvektor zum kleinsten Eigenwert von $A$ das Optimierungsproblem $$\begin{cases}\min \frac{1}{2}\langle Ax, x\rangle\\\|x\|_2=1\end{cases}.$$
+Sei $A:\mathbb R^n\to \mathbb R^n$ eine symmetrische positiv definite lineare Abbildung. Dann löst jeder normierte Eigenvektor zum kleinsten Eigenwert von $A$ das Optimierungsproblem $$\begin{cases}\min \frac{1}{2}\langle Ax, x\rangle\\\|x\|_2=1\end{cases}=\begin{cases}\min \frac{1}{2}\langle Ax, x\rangle\\\|x\|_2^2=1\end{cases}=\begin{cases}\min \frac{1}{2}\langle Ax, x\rangle\\\|x\|_2^2-1=0\end{cases}=\begin{cases}\min f(x)=\frac{1}{2}\langle Ax, x\rangle\\h(x)=-\frac{1}{2}\|x\|_2^2+\frac{1}{2}=0\end{cases}.$$
+\begin{proof}
+Zunächst wird die notwendige Karush-Kuhn-Tucker-Bedingung für ein Minimum überprüft. Wie in Beispiel 6.2.6 ist der zulässige Bereich regulär. Der Gradient von $f$ ist $\nabla f(x)=\frac{1}{2}(A+A^T)x=Ax$ wegen der Symmetrie von $A$. Der Gradient von $h$ ist $\nabla h(x)=-\frac{1}{2}\cdot 2x=-x$. Die notwendige Bedingung für ein Minimum in $x$ ist also
+$$\nabla f(x)+\langle \nabla h(x),\lambda\rangle=Ax -\lambda x=0$$
+und damit äquivalent zur Eigenwertgleichung $Ax=\lambda x$.\\\\
+Neben dieser notwendigen Bedingung müssen Lösungen auch die Restriktion $\|x\|_2=1$ erfüllen, weshalb nur normierte Eigenvektoren als Optimallösung in Frage kommen.\\\\
+Schließlich wird die hinreichende Bedingung für ein Minimum überprüft. Die Hesse-Matrix von $f$ lautet $f''(x)=A$. Die Hesse-Matrix der einzigen Restriktion $h$ lautet $h''(x)=-I$. Die hinreichende Bedingung für ein Minimum in $x$ mit $\lambda$ wie oben ist also
+\begin{align*}
+&\exists \alpha>0:\forall d\in \{d\in\mathbb R^n\mid \langle \nabla h(x),d\rangle=-\langle d,x\rangle=0\}:\\
+&d^T(f''(x)+\lambda h''(x))d=d^T(A-\lambda I)d=d^TAd-\lambda \|d\|_2^2\geq\alpha\|d\|_2^2\end{align*}
+Aus der positiven Definitheit folgt $d^TAd\geq\lambda_{\min}\|d\|_2^2$ mit dem kleinsten Eigenwert $\lambda_{\min}$.
+???
+\end{proof}
