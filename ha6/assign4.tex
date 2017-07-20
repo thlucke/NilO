@@ -1,13 +1,27 @@
 \assignment{6.4}
 
-Seien $\mathcal F:=\{(x,y)^T\in\mathbb R^2\mid \forall j\in\{1,2,3\}:g_j(x,y)\leq 0\}$ mit 
+Seien $\mathcal F:=\left\{\begin{bmatrix}x\\y\end{bmatrix}\in\mathbb R^2\mid \forall j\in\{1,2,3\}:g_j(x,y)\leq 0\right\}$ mit 
 \begin{enumerate}
 \item $g_1: \mathbb R^2\to\mathbb R$ mit $g_1(x,y)=(x-1)^2+(y-1)^2-2$
 \item $g_2: \mathbb R^2\to\mathbb R$ mit $g_2(x,y)=(x-1)^2+(y+1)^2-2$
 \item $g_3: \mathbb R^2\to\mathbb R$ mit $g_3(x,y)=-x$
 \end{enumerate}
-und $(x,y)^T=(0,0)^T$.
+Die zugehörigen Gradienten sind
+\begin{enumerate}
+\item $\nabla g_1(x,y)=\begin{bmatrix}2(x-1)\\2(y-1)\end{bmatrix}$.
+\item $\nabla g_2(x,y)=\begin{bmatrix}2(x-1)\\2(y+1)\end{bmatrix}$.
+\item $\nabla g_3(x,y)=\begin{bmatrix}-1\\0\end{bmatrix}$
+\end{enumerate}
+Wir betrachten $\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}0\\0\end{bmatrix}$ und untersuchen folgende Regularitätsbedingungen:
 \begin{compactenum}[(i)]
-\item Bedingung der linearen Unabhängigkeit (LICQ)?
-\item Bedingung von Mangasarian und Fromovitz (MFCQ)?
+\item Bedingung der linearen Unabhängigkeit (LICQ):\\
+In $\begin{bmatrix}0\\0\end{bmatrix}$ sind alle Ungleichungen aktiv. Die drei je zweikomponentigen Gradienten $\nabla g_1(0,0),\nabla g_2(0,0),\nabla g_3(0,0)\in\mathbb R^2$ können zusammen nicht linear unabhängig sein. Daher ist (LICQ) nicht erfüllt.\\
+\item Bedingung von Mangasarian und Fromovitz (MFCQ):\\
+Mit $d=\begin{bmatrix}1\\0\end{bmatrix}\in\mathbb R^2$ gilt
+\begin{enumerate}
+\item $\left\langle \nabla g_1(0,0),d\right\rangle=\left\langle \begin{bmatrix}-2\\-2\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix}\right\rangle=-2<0$
+\item $\left\langle \nabla g_2(0,0),d\right\rangle=\left\langle \begin{bmatrix}-2\\2\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix}\right\rangle=-2<0$
+\item $\left\langle \nabla g_3(0,0),d\right\rangle=\left\langle \begin{bmatrix}-1\\0\end{bmatrix},\begin{bmatrix}1\\0\end{bmatrix}\right\rangle=-1<0$
+\end{enumerate}
+Da die Bedingungen an Gleichungsrestriktionen wegfallen, ist (MFCQ) erfüllt.
 \end{compactenum}
